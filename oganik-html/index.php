@@ -35,16 +35,14 @@
 </head>
 
 <body>
-    <?php
-        echo "hola mundo";
-    ?>
-
+    
     <div class="preloader">
         <img class="preloader__image" width="55" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
         <header class="main-header">
+
             <div class="topbar">
                 <div class="container">
                     <div class="main-logo">
@@ -52,8 +50,8 @@
                             <img src="assets/images/logo-dark.png" width="105" alt="">
                         </a>
                         <div class="mobile-nav__buttons">
-                            <a href="#" class="search-toggler"><i class="organik-icon-magnifying-glass"></i></a>
-                            <a href="#" class="mini-cart__toggler"><i class="organik-icon-shopping-cart"></i></a>
+                            <!-- <a href="#" class="search-toggler"><i class="organik-icon-magnifying-glass"></i></a>
+                            <a href="#" class="mini-cart__toggler"><i class="organik-icon-shopping-cart"></i></a> -->
                         </div><!-- /.mobile__buttons -->
 
                         <span class="fa fa-bars mobile-nav__toggler"></span>
@@ -73,66 +71,52 @@
                     <div class="topbar__right">
                         <div class="topbar__info">
                             <i class="organik-icon-calling"></i>
-                            <p>Phone <a href="tel:+92-666-888-0000">92 666 888 0000</a></p>
+                            <p>Phone <a href="tel:+92-666-888-0000">72708767</a></p>
                         </div><!-- /.topbar__info -->
                         <div class="topbar__buttons">
-                            <a href="#" class="search-toggler"><i class="organik-icon-magnifying-glass"></i></a>
-                            <a href="#" class="mini-cart__toggler"><i class="organik-icon-shopping-cart"></i></a>
+                            <!-- <a href="#" class="search-toggler"><i class="organik-icon-magnifying-glass"></i></a>
+                            <a href="#" class="mini-cart__toggler"><i class="organik-icon-shopping-cart"></i></a> -->
                         </div><!-- /.topbar__buttons -->
                     </div><!-- /.topbar__left -->
 
                 </div><!-- /.container -->
             </div><!-- /.topbar -->
+            
             <nav class="main-menu">
                 <div class="container">
                     <div class="main-menu__login">
-                        <a href="#"><i class="organik-icon-user"></i>Login / Register</a>
+                        <!-- <a href="#"><i class="organik-icon-user"></i>Login / Register</a> -->
                     </div><!-- /.main-menu__login -->
                     <ul class="main-menu__list">
                         <li class="dropdown">
-                            <a href="index.html">Home</a>
-                            <ul>
-                                <li>
-                                    <a href="index.html">Home One</a>
-                                </li>
-                                <li><a href="index-2.html">Home Two</a></li>
-                                <li class="dropdown">
-                                    <a href="#">Header Styles</a>
-                                    <ul>
-                                        <li><a href="index.html">Header One</a></li>
-                                        <li><a href="index-2.html">Header Two</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <a href="index.php">Inicio</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="quienessomos.php">Quienes Somos</a>
                         </li>
                         <li class="dropdown">
-                            <a href="products.html">Shop</a>
+                            <a href="#">Productos</a>
                             <ul>
-                                <li><a href="products.html">Shop</a></li>
-                                <li><a href="product-details.html">Product Details</a></li>
-                                <li><a href="cart.html">Cart Page</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="products.html">Fertilizantes</a></li>
+                                <li><a href="products.html">Fungicidas</a></li>
+                                <li><a href="products.html">Herbicidas</a></li>
+                                <li><a href="products.html">Insecticidas</a></li>
+                                <li><a href="products.html">Semillas</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="news.html">News</a>
-                            <ul>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="news-details.html">News Details</a></li>
-                            </ul>
+                        <li class="dropdown"><a href="news.html">Cultivos</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contactos.php">Contactos</a></li>
+                        <li><a href="facturacion.php">Facturacion</a></li>
                     </ul>
                     <div class="main-menu__language">
-                        <img src="assets/images/resources/flag-1-1.jpg" alt="">
-                        <label class="sr-only" for="language-select">select language</label>
+                        <!-- <img src="assets/images/resources/flag-1-1.jpg" alt="">
+                        <label class="sr-only" for="language-select">select language</label> -->
                         <!-- /#language-select.sr-only -->
-                        <select class="selectpicker" id="language-select-header">
+                        <!-- <select class="selectpicker" id="language-select-header">
                             <option value="english">English</option>
                             <option value="arabic">Arabic</option>
-                        </select>
+                        </select> -->
                     </div><!-- /.main-menu__language -->
                 </div><!-- /.container -->
             </nav>
