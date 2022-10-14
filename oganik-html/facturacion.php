@@ -35,6 +35,9 @@
 </head>
 
 <body>
+    <?php
+        echo "Hola Mundo";
+    ?>
     <div class="preloader">
         <img class="preloader__image" width="55" src="assets/images/loader.png" alt="" />
     </div>
