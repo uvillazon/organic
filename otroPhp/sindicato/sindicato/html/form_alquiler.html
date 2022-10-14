@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Registrar Alquiler</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>[titulo]</strong><hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="mframe" id="mframe" method="post" action="alquiler.php?accion=[accion]" onSubmit="return validaChofer();">
+
+
+                                    <input name="registrar_chofer" id="registrar_chofer" type="hidden" value="registrar_chofer">
+									<table width="73%" border="0" align="center">
+                                      <tr bgcolor="#FFFFFF"> 
+                                        <td height="26" colspan="4"><div align="center"></div></td>
+                                      </tr>
+                                      <tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+          de Socio como alquiler:</strong></div></td>
+                                        
+      <td width="64%" colspan="3"><input name="numero_chofer" type="text" id="numero_chofer" size="3" value="[numChofer]"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+          de Licencia o CI:</strong></div></td>
+                                        <td colspan="3"><input name="numero_licencia" type="text" id="numero_licencia" size="8" value="[numLicencia]"></td>
+                                      </tr>
+									   <tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de socio:</strong></div></td>
+                                        <td colspan="3"><input name="nombre_chofer" type="text" id="nombre_chofer" size="50" value="[nombreChofer]"></td>
+                                      </tr>
+									  
+									  <tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Direccion :</strong></div></td>
+                                        <td colspan="3"><input name="direccion" type="text" id="direccion" size="50" value="[direccion]"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Telefono:</strong></div></td>
+                                        <td colspan="3"><input name="telefono" type="text" id="telefono" size="50" value="[telefono]"></td>
+                                      </tr>
+									  <!--<tr> 
+                                        <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Tipo de Socio:</strong></div></td>
+                                        <td colspan="3">[radio]</td>
+                                      </tr>-->
+                                      <tr> 
+                                        <td height="25" bgcolor="#FFFFFF"><div align="right"><strong>Observacion 
+                                            :</strong></div></td>
+                                        <td colspan="3"> 
+                                          <textarea name="observacion">[observacion]</textarea></td>
+                                      </tr>
+                                      <tr> 
+                                        <td colspan="4"> <div align="center"> 
+                                          <input type="submit" name="Submit3" value="[boton]">
+                                          <input type="button" value="CANCELAR" onClick="window.location.href='alquiler.php'">
+</div></td>
+                                      </tr>
+  </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

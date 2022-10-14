@@ -1,0 +1,191 @@
+<?php
+class ingreso
+{
+	var $parameter=array();
+	function SetParameter($name,$value)
+	{
+		$this->parameter[$name]=$value;
+	}
+	function mostrarRegistro(){
+		$template=new template;
+		$template->SetTemplate('html/registro.html');
+		return $template->Display();
+	}
+    
+    /*function cambiarfecha($dias){
+        return date('Y-m-d', strtotime($dias.' days'));
+    }*/
+    
+    function cambiarfecha($fecha,$dia){
+        list($year,$mon,$day) = explode('-',$fecha);
+        return date('Y-m-d',mktime(0,0,0,$mon,$day+$dia,$year));		
+    }
+    
+	function registrarHoja(){
+        $query = new query;
+		$template = new template;
+		$template->SetTemplate('html/form_ingreso.html');
+        $mayor = $query->getRow("MAX(numero_registro) as mayor","ingreso");		
+		$tipoingresolist = $query->getRows("*","tipo_ingreso");
+	    foreach($tipoingresolist as $key=>$tipoingreso)
+	    {
+	      $script .= "<option value=".$tipoingreso['id_tipo_ingreso']." onclick=\"ajax('nombrepago','ingresos.php?accion=buscarPago&idtipoingreso=' + document.mframe.tipo_ingreso.value, '');\"";
+	      $script .= '>'.$tipoingreso['tipo_ingreso'].'</option>'."\n";
+	    }
+
+        if($mayor['mayor'] == null) {
+            $num_hoja = 0000001;
+        }
+        else {
+            $num_hoja = $mayor['mayor']+1;
+        }
+        $template->SetParameter('numHoja',$num_hoja);
+		$template->SetParameter('tipoingreso',$script);
+		$hoy = date('Y-m-d');
+        /*$lineas = '<select name="linea" id="select">';
+        $lineasBd = $query -> getRows("*","linea");
+        foreach($lineasBd as $key=>$value) {
+            $lineas .= '<option value="'.$value['id_linea'].'">Linea '.$value['linea'].'</option>';
+        }
+        $lineas .= '</select>';
+        $template->SetParameter('lineas',$lineas);*/
+        $template->SetParameter('numeroMovil',"<input name=\"movil\" type=\"text\" id=\"movil\" onblur=\"if(document.mframe.movil.value > 0) {ajax('datosMovil','ingresos.php?accion=buscarMovil&movil=' + document.mframe.movil.value, '');}\" size=\"3\">");
+		$template->SetParameter('nombreSocio','');
+        $tipoConductor = '<input name="tipoConductor" type="radio" value="socio" checked onclick="Hide('."'showNumChofer'".'); Hide('."'showNombreChofer'".');"><label>Socio</label><input name="tipoConductor" type="radio" value="chofer" onclick="Show('."'showNumChofer'".'); Show('."'showNombreChofer'".');"><label>Chofer</label>';
+		$template->SetParameter('tipoConductor',$tipoConductor);
+		$template->SetParameter('numChofer',"<input name=\"numChofer\" type=\"text\" id=\"numChofer\" onblur=\"if(document.mframe.numChofer.value > 0) {ajax('nombreChofer','ingresos.php?accion=buscarChofer&numChofer=' + document.mframe.numChofer.value, '');}\" size=\"3\">");
+$template->SetParameter('tipoingreso',"<input name=\"tipoingreso\" type=\"num\" id=\"tipoingreso\" onchange=\"if(document.mframe.tipoingreso.value > 0) {ajax('nombrepago','ingresos.php?accion=buscarPago&tipoingreso=' + document.mframe.tipoingreso.value, '');}\" size=\"20\">");
+		$template->SetParameter('nombrepago','');
+		$template->SetParameter('tipoingreso',$script);
+		$template->SetParameter('observacion','');
+		$template->SetParameter('accion','saveHoja');
+        $template->SetParameter('boton','REGISTRAR');
+		return $template->Display();
+	}
+    
+    function buscarMovil(){
+        $query = new query;
+        //$linea = $query->getRow("linea","linea","where id_linea = ".$_GET['idlinea']);
+        $nombreSocio = $query->getRow("m.id_movil, nombre_socio, apellido1_socio, apellido2_socio, placa_movilidad","socio s, movil m, pertenece p","where m.num_movil like '%_".$_GET['movil']."' and m.id_movil = p.id_movil and p.id_socio = s.id_socio");
+        $nombreCompleto = $nombreSocio['nombre_socio']." ".$nombreSocio['apellido1_socio']." ".$nombreSocio['apellido2_socio'];
+		return "<span>".$nombreCompleto."</span><input type=\"hidden\" name=\"id_movil\" value=\"".$nombreSocio['id_movil']."\">";
+	}
+    
+    function buscarChofer(){
+        $query = new query;
+        $nombreChofer = $query->getRow("nombre_chofer, id_chofer","chofer","where num_chofer = ".$_GET['numChofer']);
+		return "<span>".$nombreChofer['nombre_chofer']."</span><input type=\"hidden\" name=\"id_chofer\" value=\"".$nombreChofer['id_chofer']."\">";
+	}
+    function buscarPago(){
+        $query = new query;
+        $nombrepago = $query->getRow("monto_tipo_ingreso, id_tipo_ingreso","tipo_ingreso","where id_tipo_ingreso = '".$_GET['idtipoingreso']."'");
+		return "<span>".$nombrepago['monto_tipo_ingreso']."</span><input type=\"hidden\" name=\"id_tipo_ingreso\" value=\"".$nombrepago['id_tipo_ingreso']."\">";
+	}
+    
+    
+    
+    function saveHoja() //save the new Item
+    {
+        $query = new query;
+        $insert['id_ingreso'] = $_POST[id_ingreso];
+        $insert['numero_registro'] = $_POST[numero_registro];
+        $insert['concepto_ingreso'] = $_POST[concepto_ingreso];
+        $insert['fecha_ingreso'] = date("Y-m-d");
+        $insert['id_socio'] = $_POST[id_socio];
+        $insert['id_tipo_ingreso'] = $_POST[id_socio];
+		$insert['monto_pago_ingreso'] = $_POST[monto_pago_ingreso];
+
+        $reg = false;
+            if(count($resti) == 0) {
+            for($i=1;$i<=$_POST[cantidadHojas];$i++) {
+                //echo "<script>alert('numero de hojas: ".$_POST[cantidadHojas]."');</script>";
+                $query->dbInsert($insert,"hoja_control"); //save in the data base
+                echo "<script>window.open('imprimirRecibo.php?numHoja=".$insert['numero_hoja']."');</script>";
+                $aux = $i;
+                $insert['numero_hoja'] += 1;
+                $insert['fecha_a_usar'] = $this->cambiarfecha($insert['fecha_ingreso'],'1');
+                $reg = true;
+            }
+            if($reg)
+                echo "<script>alert('Se registraron ".$_POST['cantidadHojas']." hoja(s) de control');</script>";
+            else
+                echo "<script>alert('Error en el registro de las hojas de control');</script>";
+        } echo "<script>window.location.href='ingresos.php'</script>";
+
+    }
+    
+    function listarHoja() //list for default the all items
+	{
+		$template = new template;
+		$template->SetTemplate('html/lista_recibos.html'); //sets the template for this function
+		$template->SetParameter('hoy',date('d-M-Y'));
+        $hoy = date('Y-m-d');
+		
+		//DataBase Conexion//
+		$query = new query;
+        $confirm="javascript:return confirm('Esta seguro de eliminar la hoja de control?');";
+        $resultingreso = $query->getRows("*","ingreso a, tipo_ingreso b, movil m, pertenece p,socio s","WHERE m.id_movil=p.id_movil and a.id_socio=s.id_socio and p.id_movil=m.id_movil and a.id_tipo_ingreso=b.id_tipo_ingreso");
+		
+        $init = (($_GET['page'] == "" ? 1 : $_GET['page']) - 1) * 5;
+        $resultingreso = $query->getRows("*","ingreso a, tipo_ingreso b, movil m, pertenece p,socio s","WHERE m.id_movil=p.id_movil and a.id_socio=s.id_socio and p.id_movil=m.id_movil and a.id_tipo_ingreso=b.id_tipo_ingreso LIMIT $init , 5");
+       	$resultingreso = $query->getRows("*","ingreso","where fecha_ingreso = '".$hoy."' ORDER BY numero_registro");
+        $init = (($_GET['page'] == "" ? 1 : $_GET['page']) - 1) * 20;
+        $resultingreso = $query->getRows("*","ingreso","where fecha_ingreso = '".$hoy."' ORDER BY numero_registro LIMIT $init , 20");
+		$nombreSocio = $query->getRow("s.nombre_socio, s.apellido1_socio, s.apellido2_socio","socio s, pertenece p, movil m, ingreso a","where p.id_socio=s.id_socio and m.id_movil=p.id_movil and a.id_socio=s.id_socio ");
+                    $nombreChofer = $nombreSocio['nombre_socio']." ".$nombreSocio['apellido1_socio']." ".$nombreSocio['apellido2_socio'];
+
+		        $numhoja = count($resultingreso);
+        if($numhoja > 0) {
+            $list ='<table border = "1">
+              <thead><tr>
+                <th>Numero</th>
+                <th>Fecha Ingreso</th>
+                <th>Monto</th>
+                <th>descripcion</th>
+                <th>Socio</th>
+                </tr></thead>';
+            $x = 0;
+            foreach ($resultingreso as $key=>$value) {
+                $x++;
+                
+                $list .= '<tbody><tr '.$par.'>
+                  <td>'.$value["numero_registro"].'</td>
+                  <td>'.$value["fecha_ingreso"].'</td>
+				  <td>'.$value["monto_pago_ingreso"].'</td>
+                  <td>'.$value["concepto_ingreso"].'</td>
+				  <td>'.$nombreChofer.'</td>
+                    </tr></tbody>';
+            }
+            $list.='</table>';
+            $list .= paging::navigation(count($resulingreso),"ingresos.php",20);
+        } else $list = '<div>No existen Ingresos registrados</div>';
+        $buttonAdd = '<input type="button" value="Nuevo" onclick="window.location.href=\'ingresos.php?accion=registro\'">';
+        $template->SetParameter('add',$buttonAdd);
+        $totalDia = $query->getRow("SUM(monto_pago_ingreso) as totalDia","ingreso","where fecha_ingreso	 = '".$hoy."'");
+		$template->SetParameter('totalDia',"<br />Total ingreso de hoy: ".$totalDia['totalDia']);
+		$template->SetParameter('montoIngreso',$resultingreso['monto_pago_ingreso']);
+		$template->SetParameter('id_ingreso',$resultingreso['id_ingreso']);
+		$template->SetParameter('descripcionIngreso',$resultingreso['concepto_ingreso']);
+		$template->SetParameter('tipoingreso',$script);
+		$template->SetParameter('contenido',$list);
+		
+		return $template->Display();
+	}
+    
+	function Display(){
+		$template=new template;
+		$template->SetTemplate('html/home.html');
+		$template->SetParameter('registro',$this->mostrarRegistro());
+		if($_GET['accion']==""){
+            $template->SetParameter('contenido',$this->listarHoja());
+        }
+        if($_GET['accion']=="registro"){
+            $template->SetParameter('contenido',$this->registrarHoja());
+        }
+        if($_GET['accion']=="modificar"){
+            $template->SetParameter('contenido',$this->modificarHoja());
+        }
+		return $template->Display();
+	}
+}
+?>

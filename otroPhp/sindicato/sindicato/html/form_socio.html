@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Registrar Socio</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<script type="text/javascript" language="javascript">
+/*Funcion que oculta campo*/
+    function Hide(id) {
+        if(document.getElementById(id).style["display"] != "none"){
+            document.getElementById(id).style["display"] = "none";
+        }
+    }
+    function Show(id) {
+        if(document.getElementById(id).style["display"] == "none"){
+            document.getElementById(id).style["display"] = "";
+        }
+    }
+</script>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>[titulo]</strong><hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="mframe" id="mframe" method="post" action="socio.php?accion=[accion]" onSubmit="return validaSocio();">
+        <input name="registrar_socio" id="registrar_socio" type="hidden" value="registrar_socio">
+        <table width="85%" border="0" align="center">
+          <tr bgcolor="#FFFFFF"> 
+            <td height="26" colspan="4"><div align="center"></div></td>
+          </tr>
+                                              <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+de Licencia o CI:</strong></div></td>
+            <td width="52%" colspan="3"><input name="numero_licencia" id="numero_licencia" size="8" value="[licencia]"></td>
+          </tr>
+           <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+            <td colspan="3"><input name="nombre_socio" type="text" id="nombre_socio" size="30" value="[nombreSocio]"></td>
+          </tr>
+          <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right">
+              <p><strong>Apellido de Socio </strong><strong>:</strong></p>
+              </div></td>
+            <td colspan="3"><input name="ape1" type="text" id="ape1" size="15" value="[apellido1]">
+              -
+                <input name="ape2" type="text" id="ape2" size="15" value="[apellido2]"></td>
+          </tr>
+          <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Direccion :</strong></div></td>
+            <td colspan="3"><input name="direccion" type="text" id="direccion" size="50" value="[direc]"></td>
+          </tr>
+          <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Telefono:</strong></div></td>
+            <td colspan="3"><input name="telefono" type="text" id="telefono" onKeyPress="return numeral(event)" size="20" value="[telef]"></td>
+          </tr>
+          <!--tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Linea:</strong></div></td>
+            <td colspan="3">[lineas]</td>
+          </tr-->
+          <tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Tipo Socio:</strong></div></td>
+            <td colspan="3">[radio]</td>
+          </tr>
+          <tr [caractFecha]>
+            <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha fin del Alquiler:</strong></div></td>
+            <td width="64%" colspan="3"><input name="fecha_fin" type="text" id="fecha_fin" size="10" readonly value="[fecha_fin]"><button type="reset" id="boton">...</button>
+            <script type="text/javascript">
+                Calendar.setup({
+                    inputField     :    "fecha_fin",      // id del campo de texto
+                    ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+                    showsTime      :    false,            // true para q se muestre la hora en el calendario
+                    button         :    "boton",   // id del boton
+                    singleClick    :    true,           // double-click mode
+                    step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+                });
+            </script>
+            </td>
+        </tr>
+           <!--<tr> 
+            <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto  por registro socio Nuevo :</strong></div></td>
+            <td>[montoRegistro]$</div></td>
+          </tr>-->
+          <tr> 
+            <td colspan="4"> <div align="center"> 
+              <input type="submit" name="Submit3" value="[boton]">
+                <input type="button" value="CANCELAR" onClick="window.location.href='socio.php'">
+</div></td>
+          </tr>
+  </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Registrar Ingreso por falta a Reunion</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>REGISTRO DE INGRESOS</strong>
+            <hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="mframe" id="mframe" method="post" action="registrar.php">
+                                    <input name="registrar_ingresos" id="registrar_ingresos" type="hidden" value="registrar_ingresos">
+									<table width="100%" border="0">
+									 <td height="26" colspan="4"><div align="center"></div></td>
+		  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Licencia o CI del SOCIO :</strong></div></td>
+                                        <td width="66%" colspan="3"><input name="licencia" type="text" id="licencia" onKeyPress="return numeral(event)" size="8"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                                        <td colspan="3">&nbsp;</td>
+									  </tr>
+                                                             
+									   			<tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Concepto o Razon de pago:</strong></div></td>
+                                        <td colspan="3"><select name="ingreso" id="select">
+                                          <option value="Faltareunion">multa Asamblea</option>
+                                          <option value="AtrasoReunion">atraso a Asamblea</option>
+										   </select>
+                                        Bolivianos</td>
+                                      </tr>						   
+                                         <tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto  a Pagar:</strong></div></td>
+                                        <td colspan="3"><input name="ingreso_falta" type="text" id="ingreso_falta" size="7">
+                                        Bolivianos</td>
+                                      </tr>                                  
+                                                                            <tr> 
+                                        <td colspan="4"> <div align="center"> 
+                                          <input type="button" name="Submit3" value="R E G I S T R A R" onClick="enviar(mframe);">
+</div></td>
+                                      </tr>
+                                    </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

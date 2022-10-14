@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Registrar Permiso- Multa</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>REGISTRO DE PERMISO//Valido en dias laborables </strong>
+            <hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="sign_form" onsubmit="return validateSignUp();" method="post"  action="registrar.php">
+                                   
+									<table width="100%" border="0">
+									
+		  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+          de MOVIL:</strong></div></td>
+                                        <td width="66%" colspan="3"><input name="licencia" type="text" id="licencia" onblur="if (document.sign_form.licencia.value.length > 0) { ajax('lblresult','verificar.php?action=verificarmovil&name=' + document.sign_form.licencia.value, ''); };" /></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                                        <td id="lblresult"><input type="hidden" name="extra" value="false"/>&nbsp;</td><br>
+									  </tr>
+                                                             
+									   			<tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto  por solicitud PERMISO:</strong></div></td>
+                                        <td colspan="3"><select name="permiso" id="select">
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+										   <option value="7">7</option>
+                                        </select>
+                                        Bolivianos</td>
+                                      </tr>			
+                                      <tr>
+               <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha de uso de permiso:</strong></div></td>
+                <td><label>
+                  <input name='fecha' id='campo1' type='text' size='20' maxlength='10' />
+                  <button  type='button' id='boton1'><img src='images/calendar.png' /></button>
+													<script type='text/javascript'>
+														Calendar.setup({
+															inputField     :    'campo1',      // id del campo de texto
+															ifFormat       :    '%Y/%m/%d',       // formato en el q se presentara la fecha 
+															showsTime      :    false,            // true para q se muestre la hora en el calendario
+															button         :    'boton1',   // id del boton
+															singleClick    :    true,           // double-click mode
+															step           :    1                // show all years in drop-down boxes 
+														});
+													</script>
+                </label></td>
+              </tr>			   
+                                                                           
+                                                                            <tr> 
+                                        <td colspan="4"> <div align="center"> 
+                                          <input type="submit" name="Submit3" value="R E G I S T R A R">
+</div></td>
+                                      </tr>
+                                    </table>
+      </form>
+         <script language="JavaScript">
+    function validateSignUp()
+    {
+		if (document.forms.sign_form.licencia.value.length == 0 )
+		{
+			alert ('Ingrese un numero de movil');
+			document.forms.sign_form.licencia.focus();
+			return false;
+		}
+		if (document.forms.sign_form.fecha.value.length == 0 )
+		{
+			alert ('Ingrese el motivo por el cual se esta multando');
+			document.forms.sign_form.fecha.focus();
+			return false;
+		}
+		var letra=document.forms.sign_form.licencia.value;
+		for ( i = 0; i < letra.length; i++ ) {
+			valor = parseInt(letra.charAt(i)); // me permite convertir letra por letra en numero y si no es un numero entonces no regresa nada
+			if (isNaN(valor) == true) {
+				alert ('Ingrese solo numeros en el campo de numero de licencia.');
+				document.forms.sign_form.licencia.focus();
+				return false;
+				}
+			}
+		
+      return true;
+    }
+</script>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

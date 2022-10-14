@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Prueba de Calendario</title>
+  <!-- stylesheet
+  dependiendo del archivo q se importe cambiara el skin
+  para seleccionar uno nuevo hay q cambiar el valor de href="archivo.css" por uno de los ficheros '.css'
+   -->
+  <link rel="stylesheet" type="text/css" media="all" href="calendar-blue.css" title="green" />
+
+  <!-- Programa principal del calendario -->
+  <script type="text/javascript" src="calendar.js"  ></script>
+
+  <!-- lenguaje del calendario-->
+  <script type="text/javascript"  src="calendar-es.js" ></script>
+
+  <!-- el siguiente script define el asistente de funcion del calendario. -->
+  <script type="text/javascript" src="calendar-setup.js" ></script>
+</head>
+<body>
+
+<center>LuLy  hola<br>=)</center>
+<br><br>
+Seleccione una fecha:
+
+<input type="text" name="date" id="campo" /><button type="reset" id="boton">...</button>
+<input type="text" name="date" id="campo1" /><button type="reset" id="boton1">...</button>
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "campo",      // id del campo de texto
+        ifFormat       :    "%d/%m/%Y",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+        showsTime      :    true,            // true para q se muestre la hora en el calendario
+        button         :    "boton",   // id del boton
+        singleClick    :    true,           // double-click mode
+        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+    });
+</script>
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "campo1",      // id del campo de texto
+        ifFormat       :    "%d/%m/%Y",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+        showsTime      :    true,            // true para q se muestre la hora en el calendario
+        button         :    "boton1",   // id del boton
+        singleClick    :    true,           // double-click mode
+        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+    });
+</script>
+
+</body>
+</html>

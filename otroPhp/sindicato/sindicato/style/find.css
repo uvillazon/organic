@@ -1,0 +1,35 @@
+#capaPrincipal{
+	padding:0px;
+	margin:0px;
+	float:left;
+    background-color: #FFFF99;
+    width: 300px;
+    height: 114px;
+    
+    text-align: center;
+    font-family: "Comic Sans MS";
+    font-size: larger;
+    }
+
+  #menu1{
+	padding:0px;
+	margin:0px;
+	float:left;
+    background-color: #CCCCFF;
+    position: absolute;
+    top: 34px;
+    width: 300px;
+    height: 350px;
+    visibility: hidden;
+    text-align: center;
+    padding: 0px;
+    margin-left: 0px;
+        }
+
+  a{
+    text-decoration: none;
+  }
+
+  ul{
+    list-style-type: none;
+  }

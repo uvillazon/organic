@@ -1,0 +1,96 @@
+<html>
+<link href="estilo.css"type=text/css rel=stylesheet>
+		<style media="print" type="text/css">
+#imprimir {
+visibility:hidden
+}
+</style>
+    <head>
+        <title>Imprimir Informe</title>
+        <link href="estilo.css"type=text/css rel=stylesheet></head>
+	<script language="JavaScript" src="js/imprimir.js"></script>
+
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><p><strong>[titulo]</strong></p>
+                      <p>Del: [fechainicio] Al: [fechafin] </p>
+                      <hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+               <form name="#" method="post" action="ParaInsertar.php">
+	   <input name="registrar_permiso" id="registrar_permiso" type="hidden" value="registrar_permiso">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+               <tr>
+                    <td><div align="right"><strong>Linea :</strong></div></td>
+                    <td>[lineas]</td>
+                </tr>
+			   <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Movil:</strong></div></td>
+                    <td colspan="3">[numeroMovil]</td>
+                </tr>
+				
+			    <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Licencia o CI:</strong></div></td>
+                    <td width="66%" colspan="3">[licencia]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Hojas de Control compradas:</strong></div></td>
+                    <td colspan="3">[hojas] </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Dias sin chofer :</strong></div></td>
+                    <td colspan="3">[diasinchofer] //Dias q trabajo el socio con su vehiculo </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Ahorro por dias sin chofer </strong></div></td>
+                    <td colspan="3">[ahorrosinchofer] //Ahorro por dias que trabajo el socio </td>
+                </tr>
+				<tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Dias con chofer :</strong></div></td>
+                    <td colspan="3">[diasconchofer] //Dias que trabajo el chofer </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Ahorro por Movil:</strong></div></td>
+                    <td colspan="3">[ahorrosocio] [Bs.] // </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Total ahorro recaudado:</strong></div></td>
+                    <td colspan="3">[totalahorro] [Bs.] // Total ahorro a recoger </td>
+                </tr>
+				<tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Total ahorro cancelado:</strong></div></td>
+                    <td colspan="3">[ahorrocancelado] [Bs.] // Total ahorro pagado </td>
+                </tr>
+				<tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Total ahorro por pagar:</strong></div></td>
+                    <td colspan="3">[saldoahorro] [Bs.] // Total ahorro por pagar </td>
+                </tr>
+				<tr>
+			
+				<div class="Content_" align="center" style="color:#000000">
+                                            [contenido]
+                      </div>
+				
+				</tr>
+                                                  
+                <tr>
+                    <td colspan="4"><div align="center"><label>
+<input type="button" name="imprimir" id="imprimir" value="Imprimir" onClick="window.print();" />
+</label>
+</div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

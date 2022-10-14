@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Registrar Pago de ahorro</title>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>REGISTRO DE PAGO DE AHORRO </strong>
+                      <hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="ahorro.php?accion=[accion]" onSubmit="return validaPrestamo();">
+                <input name="registrar_ahorro" id="registrar_ahorro" type="hidden" value="registrar_ahorro">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+				 <tr>
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha de Pago:</strong></div></td>
+                    <td width="64%" colspan="3"><input name="fecha_pago" type="text" id="fecha_pago" size="10" value="[fecha_pago]"><button type="reset" id="boton">...</button>
+                    <script type="text/javascript">
+                        Calendar.setup({
+                            inputField     :    "fecha_creacion",      // id del campo de texto
+                            ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+                            showsTime      :    false,            // true para q se muestre la hora en el calendario
+                            button         :    "boton",   // id del boton
+                            singleClick    :    true,           // double-click mode
+                            step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+                        });
+                    </script>
+                    </td>
+                </tr>
+               <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero Movil:</strong></div></td>
+                    <td colspan="3">[numeroMovil]</td>
+                </tr> <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+				<tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Codigo (Chofer o Alquiler):</strong></div></td>
+                    <td width="66%" colspan="3">[numChofer]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre del Chofer o alquiler:</strong></div></td>
+                    <td colspan="3"><div id="nombreChofer">[nombreChofer]</div></td>
+                </tr>
+                
+                <tr>
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha al que corresponde el ahorro:</strong></div></td>
+                    <td width="64%" colspan="3"><input name="fecha_ahorro" type="text" id="fecha_ahorro" size="10" value="[fecha_ahorro]"><button type="reset" id="boton">...</button>
+                    <script type="text/javascript">
+                        Calendar.setup({
+                            inputField     :    "fecha_ahorro",      // id del campo de texto
+                            ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+                            showsTime      :    false,            // true para q se muestre la hora en el calendario
+                            button         :    "boton",   // id del boton
+                            singleClick    :    true,           // double-click mode
+                            step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+                        });
+                    </script>
+                    </td>
+                </tr>
+				
+				<tr> 
+					<td><div align="right"><strong>Monto a Cancelar como ahorro:</strong></div></td>					
+					<td><input name="deposito" type="text" id="deposito" onKeyPress="return numeral(event)" size="9">
+					Bs.</td>
+				  </tr>
+				  <tr> 
+                                        <td height="25" bgcolor="#FFFFFF"><div align="right"><strong>Descripcion 
+                                            :</strong></div></td>
+                                        <td colspan="3"> 
+                                          <textarea name="concepto">[concepto]</textarea></td>
+                                      </tr>
+                                      
+                <tr>
+              
+                <tr>
+                    <td colspan="4"><div align="center">
+                        <input type="submit" name="Submit3" value="[boton]">
+                        <input type="button" value="CANCELAR" onClick="window.location.href='ahorro.php'">
+                    </div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<?php
+class no_trabajaron
+{
+	var $parameter=array();
+	function SetParameter($name,$value)
+	{
+		$this->parameter[$name]=$value;
+	}
+	function mostrarregistro(){
+		$template=new template;
+		$template->SetTemplate('html/registro.html');
+		if($_GET['error']){
+			$template->SetParameter('error',"DATOS MAL INGRESADOS");
+		}
+		else{
+			$template->SetParameter('error',"");
+		}
+		return $template->Display();
+	}
+	function mostrarregistro1(){
+		$template=new template;
+		$template->SetTemplate('html/logen.html');
+		$query=new query;
+		$id=$_SESSION['id'];
+		$row=$query->getRow("*","usuario","where id_usuario=$id");
+		$nombre=" ".$row['nombre_usuario']." ".$row['apellido1_usuario'];
+		$template->SetParameter('name',$nombre);
+		
+		return $template->Display();
+	}
+    
+    
+    
+    function cambiarfecha($fecha,$dias)
+    {
+        $datestart= strtotime($fecha);
+        $diasemana = date('N',$datestart);
+        $totaldias = $diasemana+$dias;
+        $findesemana =  intval( $totaldias/5) *1 ;
+        $diasabado = $totaldias % 5 ;
+        //if ($diasabado==6) $findesemana++;
+        if ($diasabado==0) $findesemana=$findesemana-1;
+            $total = (($dias+$findesemana) * 86400)+$datestart ;
+        return $twstart=date('Y-m-d', $total);
+    }
+    
+	
+	
+	/*function foco(mframe,movil){
+      eval('document.'+mframe+'.'+movil+'.focus()');
+      }*/
+       function saveFalta(){
+        $query = new query;
+        $atrasados = $_POST['idSocio'];
+        if(count($atrasados)>0) {
+		$idTipoIngreso = $query->getRow('id_movil','pertenece','where estado_funcion = "Activo"');
+            
+            foreach($atrasados as $key)
+            {
+                $ingresoAtraso['id_movil'] = $key;
+                $ingresoAtraso['id_movil'] = $idTipoIngreso['id_movil'];
+                $mayor = $query->getRow("MAX(num_registro) as mayor","dia_no_trabajado");
+                if($mayor['mayor'] == null) {
+                    $ingresoAtraso['num_registro'] = 100001;
+                }
+                else {
+                    $ingresoAtraso['num_registro'] = $mayor['mayor']+1;
+                }
+                $ingresoAtraso['observacion_falta'] = "Falta al trabajo";
+                $ingresoAtraso['fecha_no_trabajo'] = date('Y-m-d');
+                $guardar = $query->dbInsert($ingresoAtraso,"dia_no_trabajado");
+            }
+            echo "<script>alert('Se registraron las faltas exitosamente.');</script>";
+        } else echo "<script>alert('Ocurrio un error, porfavor intente de nuevo');</script>";
+        echo "<script>window.location.href=\"dia_no_trabajado.php\"</script>";
+	}
+                
+   
+    
+   
+    
+    function filtroFecha() //list for default the all items
+	{
+        $fechaFiltro = $_GET['filtro'];
+		$query = new query;
+		
+        $confirm="javascript:return confirm('Esta seguro de eliminar movil?');";
+        //$resultmovil = $query->getRows("*","movil order by num_movil");
+        //$init = (($_GET['page'] == "" ? 1 : $_GET['page']) - 1) * 350;
+        $resultmovil1= $query->getRows("*","movil","order by id_movil");
+        
+		//$resultmovil1 = $query->getRows("*","movil"," LIMIT $init , 350");
+        $nummovil = count($resultmovil1);
+		 $list = '<form name="formAtraso" method="POST" action="no_trabajaron.php?accion=saveFalta">';
+         if($nummovil > 0) {
+            $list ='<table border = "1">
+              <thead><tr>
+                <th>Numero de movil</th>
+				<th>Socio</th>
+                <th>Linea</th>
+                
+                <th></th>
+               
+               
+                <th>Trabajaron</th>
+              </tr></thead>';
+            $x = 0;
+            foreach ($resultmovil1 as $key=>$value) {
+                $x++;
+                if(($x%2)==0)
+                    $par = "class='TdAlt'";
+                else $par = "";
+				
+				
+       
+                $pertenece = $query->getRow("id_socio, placa_movilidad","pertenece","where id_movil = ".$value['id_movil']);
+                $socio = $query->getRow("*","socio","where id_socio = ".$pertenece['id_socio']);
+                
+				$nombreCompleto = $socio['nombre_socio']." ".$socio['apellido1_socio']." ".$socio['apellido2_socio'];
+                $linea = $query -> getRow("linea","linea","where id_linea = ".$value['id_linea']);
+                //$linea2 = $query -> getRow("*","hoja_control","where id_movil = ".$value['id_movil'] and fecha_de_uso== '".$fechaFiltro."');ORDER BY fecha_de_uso DESC 
+				
+	$linea2 = $query->getRow("*","hoja_control","where id_movil = ".$value['id_movil']." and fecha_de_uso = '".$fechaFiltro."' ORDER BY fecha_de_uso DESC");
+               if($linea2['fecha_de_uso'] != null)
+                    $recibir = $linea2['hoja_usada'];
+                else $recibir = '<input type="checkbox" name="idSocio[]" value="'.$value['id_movil'].'">';
+				$soloNum = split("_",$value['num_movil']);
+                $list .= '<tbody><tr '.$par.'>
+                   <td>'.$soloNum[1].'</td>                 
+				  <td>'.$nombreCompleto.'</td>
+                  <td>'.$linea['linea'].'</td>
+                 
+                  <td></td>
+                   <td>'.$recibir.'</td>
+                  </tr></tbody>';
+            }
+          $list.='</table><input type="submit" name="guardar" value="Guardar"><input type="button" value="Cancelar" onclick="window.location.href=\'index.php\'"></form>';
+            //$list .= paging::navigation(count($resultmovil),"no_trabajaron.php",350);
+ 
+        } else $list = '<div>No existe dia seleccionado para la fecha '.$fechaFiltro.'</div>';
+		return $list;
+	}
+	
+	
+	
+	
+	function listarHoja() //list for default the all items
+	{
+		$template = new template;
+		$template->SetTemplate('html/lista_no_trabajaron.html'); //sets the template for this function
+		$template->SetParameter('hoy','');
+		//$template->SetParameter('filtroFecha','');
+		$template->SetParameter('filtroFecha','');
+       // $hoy = date('Y-m-d');
+		$hoy = date("Y-m-d");
+		//DataBase Conexion//
+		$query = new query;
+        $confirm="javascript:return confirm('Esta seguro de eliminar movil?');";
+        $resultmovil1 = $query->getRows("*","movil order by id_movil");
+        //$init = (($_GET['page'] == "" ? 1 : $_GET['page']) - 1) * 350;
+        //$resultmovil1 = $query->getRows("*","movil","order by id_movil LIMIT $init , 350");
+        $nummovil = count($resultmovil1);
+		$list = '<form name="formAtraso" method="POST" action="no_trabajaron.php?accion=saveFalta">';
+        
+        if($nummovil > 0) {
+            $list ='<table border = "1">
+              <thead><tr>
+                <th>Numero de movil</th>
+				<th>Socio</th>
+                <th>Linea</th>
+                
+                <th></th>
+               
+               
+                <th>Trabajaron</th>
+              </tr></thead>';
+            $x = 0;
+            foreach ($resultmovil1 as $key=>$value) {
+                $x++;
+                if(($x%2)==0)
+                    $par = "class='TdAlt'";
+                else $par = "";
+				
+				
+       
+                $pertenece = $query->getRow("id_socio, placa_movilidad","pertenece","where id_movil = ".$value['id_movil']);
+                $socio = $query->getRow("*","socio","where id_socio = ".$pertenece['id_socio']);
+                
+				$nombreCompleto = $socio['nombre_socio']." ".$socio['apellido1_socio']." ".$socio['apellido2_socio'];
+                $linea = $query -> getRow("linea","linea","where id_linea = ".$value['id_linea']);
+                $linea2 = $query -> getRow("hoja_usada","hoja_control","where id_movil = ".$value['id_movil']);
+                
+				/*if($resulthoja['fecha_de_uso'] != null)
+                    $recibir = $resulthoja['hoja_usada'].": ".$resulthoja['fecha_de_uso'];
+                else $recibir = '<input type="checkbox" name="nummovil[]" value="'.$resulthoja['numero_hoja'].'">';
+                 
+				   $ingresoSocio = $query->getRows('fecha_ingreso','ingreso','where id_socio = '.$value['id_socio'].' and fecha_ingreso = "'.$hoy.'" and id_tipo_ingreso = '.$idTipoIngreso['id_tipo_ingreso']); */
+				   
+				  $linea2 = $query->getRow("*","hoja_control","where id_movil = ".$value['id_movil']." and fecha_de_compra = '".$hoy."' ORDER BY fecha_de_compra DESC");
+				  
+				  if(count($linea2)>0)
+                 /*   $pagoEcho = "Pagado";
+                else
+               if($linea2['fecha_de_uso'] != null)
+*/                    $recibir = $linea2['hoja_usada'];
+                else 
+				$recibir = '<input type="checkbox" name="idSocio[]" value="'.$value['id_movil'].'">';
+				$soloNum = split("_",$value['num_movil']);
+				
+                $list .= '<tbody><tr '.$par.'>
+                   <td>'.$soloNum[1].'</td>                 
+				  <td>'.$nombreCompleto.'</td>
+                  <td>'.$linea['linea'].'</td>
+                 <td></td>
+                 <td>'.$recibir.'</td>
+                  </tr></tbody>';
+            }
+           $list.='</table><input type="submit" name="guardar" value="Guardar"><input type="button" value="Cancelar" onclick="window.location.href=\'index.php\'"></form>';
+            //$list .= paging::navigation(count($resultmovil),"no_trabajaron.php",350);
+ 
+        }  else $list = '<div>Seleccione el dia de trabajo que desea saber</div>';
+        $template->SetParameter('contenido',$list);
+		return $template->Display();
+	}
+    
+	function Display(){
+		$template=new template;
+		
+		if(!$_SESSION['tipo']){
+		
+			$template->SetTemplate('html/home12.html');
+			$template->SetParameter('registro',$this->mostrarregistro());
+		}
+		if($_SESSION['tipo']==1){
+			$template->SetTemplate('html/home1.html');
+			$template->SetParameter('registro',$this->mostrarregistro1());
+		}
+		if($_SESSION['tipo']==2){
+			$template->SetTemplate('html/home2.html');
+			$template->SetParameter('registro',$this->mostrarregistro1());
+		}
+		if($_SESSION['tipo']==3){
+			$template->SetTemplate('html/home.html');
+			$template->SetParameter('registro',$this->mostrarregistro1());
+		}
+		if($_GET['accion']==""){
+            $template->SetParameter('contenido',$this->listarHoja());
+        }
+       
+                 $template->SetParameter('pie',navigation::showpie());
+		return $template->Display();
+	}
+}
+?>

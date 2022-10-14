@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Mostrar Familia del afiliado</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+<script language="JavaScript" src="js/imprimir.js"></script>
+</head>
+<body class="sub_body">
+<?php
+		include("librerias/my_li.php");
+		conectarDB();			
+		$sql1="select * from movil where idmovil='".$_GET['codmovil']."';";		
+		$serv=consultaDB($sql1);
+		$row=mysql_fetch_array($serv);		
+		?>
+<table width="47%" border="0" align="center">
+  <tr>
+    <td height="190" class="outline">
+	<form name="#" method="post" action="ParaImprimir.php">
+	<table width="556" border="0" align="center" >
+        <tr>
+            <td width="476" height="21" align="center"><strong>RECIBO </strong></td>
+         
+        </tr>
+      </table>
+	<table width="556" border="0" align="center" >
+        <tr>
+          <td width="476" height="21">&nbsp;</td>
+          <td width="70"> No 
+            <?php 
+
+$sql="select i.numero_registro from ingreso i,movil m, socio s
+where m.id_socio=s.id_socio and i.id_socio=s.id_socio and
+m.idmovil='".$_GET['codmovil']."'";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 		echo " $r[0]";
+	
+?>          </td>
+        </tr>
+      </table>
+      
+      
+             <table width="100%" height="83" border="0" align="center">
+          <tr> 
+            <td width="32%" height="30">Numero Movil :</td>
+            <td width="68%"><input name="num_caso" type="text" value="<?php echo $row[2];?>" id="num_caso" size="10" maxlength="10" onKeyPress="return numeral(event)"></td>
+          </tr>
+          <tr> 
+            <td height="23">Nombre Socio: </td>
+            <td> 
+              <?php 
+
+$sql="select socio.nombre_socio
+from chofer,movil, socio
+where (socio.id_socio=movil.id_socio)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "$r[0]";
+?>            <?php 
+
+$sql="select socio.apellido1_socio
+from chofer,movil,socio
+where (socio.id_socio=movil.id_socio)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "$r[0]";
+?>
+              <?php 
+
+$sql="select socio.apellido2_socio
+from chofer,movil,socio
+where (socio.id_socio=movil.id_socio)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "$r[0]";
+?></td>
+          </tr>
+		  <tr> 
+            <td height="22">Concepto:</td>
+            <td><?php 
+
+$sql="select ingreso.concepto_ingreso
+from ingreso, movil, socio
+where (ingreso.id_socio=socio.id_socio)and(socio.id_socio=movil.idmovil)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "$r[0]";
+?></td>
+          </tr>
+		  <tr> 
+            <td width="32%" height="30">Monto Cancelado :</td>
+            <td width="68%"><?php 
+
+$sql="select ingreso.monto_ingreso
+from ingreso, movil, socio
+where (ingreso.id_socio=socio.id_socio)and(socio.id_socio=movil.idmovil)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "$r[0]";
+?></td>
+          </tr>
+        </table>
+       
+    </form> </td>
+  </tr>
+</table>
+<div align="center">
+  <input type=button value="Imprimir" name="Print11" onClick="printit()">
+</div>
+</body>
+</html>

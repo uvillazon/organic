@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Recibo de Ingreso</title>
+<script language="JavaScript" src="js/imprimir.js"></script>
+<SCRIPT language="javascript"> 
+function imprimir()
+{ if ((navigator.appName == "Netscape")) { window.print() ; 
+} 
+else
+{ var WebBrowser = '<OBJECT ID="WebBrowser1" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>'; 
+document.body.insertAdjacentHTML('beforeEnd', WebBrowser); WebBrowser1.ExecWB(6, -1); WebBrowser1.outerHTML = "";
+}
+}
+</SCRIPT>
+<style type="text/css">
+<!--
+.Estilo2 {font-size: 11px}
+.Estilo3 {font-size: 12px}
+.Estilo4 {font-size: 10px; }
+.Estilo5 {color: #FFFFFF}
+-->
+</style>
+</head>
+<body class="sub_body">
+<?php
+		include("librerias/my_li.php");
+		conectarDB();			
+		$sql1="select * from movil where idmovil='".$_GET['codmovil']."';";		
+		$serv=consultaDB($sql1);
+		$row=mysql_fetch_array($serv);		
+		?>
+<table width="31%" border="0" align="left">
+  <tr>
+    <td height="266" class="outline">
+	<form name="#" method="post" action="ParaImprimir.php">
+	<table width="375" border="0" align="center" >
+	 <tr> 
+            <td width="6%" height="30">&nbsp;</td>
+            <td width="86%"><table width="326" border="0">
+              <tr>
+                <td width="320"><div align="center" class="Estilo4 Estilo2"><strong>SINDICATO DE TRANSPORTISTAS  </strong></div></td>
+              </tr>
+              <tr>
+                <td><div align="center" class="Estilo3"><strong>&quot;SAN MIGUEL&quot;</strong></div></td>
+              </tr>
+              <tr>
+                <td><div align="center" class="Estilo4"><strong>TAXI TRUFI No 132 R.S. No 209404 </strong></div></td>
+              </tr>
+            </table></td>
+			<td width="8%">&nbsp;</td>
+			
+          </tr>
+	    </table>
+	<table width="375" border="0" align="center" >
+        <tr>
+            <td width="375" height="21" align="center"><strong>RECIBO DE PAGO DE CUOTA</strong></td>
+         
+        </tr>
+      </table>
+	<table width="376" border="0" align="center" >
+        <tr>
+
+          <td width="179"> No<span class="Estilo5">........</span>[numHoja]</td>
+        </tr>
+      </table>
+	  <table width="371" border="0" align="center" >
+        <tr>
+            <td width="177"> Fecha<span class="Estilo5">....</span>[fechaCompra]</td>
+	    </tr>
+      </table>
+      <table width="99%" height="83" border="0" align="left">
+         <tr> 
+            <td width="34%" height="30">Monto Pago</td>
+            <td width="66%">[montoPago]</td>
+          </tr>
+		  
+          <tr> 
+            <td height="23"> Socio o Garante: </td>
+            <td>[nombreSocio]</td>
+          </tr>
+		  <tr> 
+            <td height="23"> Chofer: </td>
+            <td>[nombreChofer]</td>
+          </tr>
+		  <tr> 
+            <td height="23"> Monto Prestamo: </td>
+            <td>[totalpago]</td>
+          </tr>
+		  <tr> 
+            <td height="23"> Concepto: </td>
+            <td>[conceptodesc]</td>
+          </tr>
+		  <tr> 
+            <td height="22">Monto Pagado hasta la fecha:</td>
+            <td>[descripcion]</td>
+          </tr>
+		  <tr> 
+            <td height="22">Monto Adeudado:</td>
+            <td>[concepto]</td>
+          </tr>
+		  
+        </table>
+       
+    </form> </td>
+  </tr>
+</table>
+
+</body>
+<script language="javascript">
+imprimir();
+window.close();
+</script>
+</html>

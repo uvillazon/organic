@@ -1,0 +1,41 @@
+<div class="Title" align="center">Lista de Prestamos de acuerdo a la fecha</div><br />
+<div><form name="formDiasTrabajo" method="POST">
+Desde la Fecha: 
+<input name="fecha_inicio" type="text" id="fecha_inicio" size="10" readonly value=""><button type="reset" id="boton">...</button>
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "fecha_inicio",      // id del campo de texto
+        ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+        showsTime      :    false,            // true para q se muestre la hora en el calendario
+        button         :    "boton",   // id del boton
+        singleClick    :    true,           // double-click mode
+        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+    });
+</script>
+Hasta la Fecha:
+<input name="fecha_fin" type="text" id="fecha_fin" size="10" readonly value="[fecha_fin]"><button type="reset" id="boton2">...</button>
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "fecha_fin",      // id del campo de texto
+        ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+        showsTime      :    false,            // true para q se muestre la hora en el calendario
+        button         :    "boton2",   // id del boton
+        singleClick    :    true,           // double-click mode
+        step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+    });
+</script>
+<input type="button" value="Listar" onclick="ajax('lista','lista_prestamo.php?accion=listarReporte&amp;fechaInicio=' + document.formDiasTrabajo.fecha_inicio.value + '&amp;fechaFin=' + document.formDiasTrabajo.fecha_fin.value,'');"></form>
+</div><br />
+<div class="Content_">
+<div id="lista">
+    [contenido]
+
+</div>
+</div>
+<div><form name="#" method="post" action="ParaInsertar.php">
+<label>
+<input type="button" name="imprimir" id="imprimir" value="Vista de Impresion" onclick="window.open('print_reporte_prestamo.php?accion=imprimir&fi='+document.formDiasTrabajo.fecha_inicio.value+'&ff='+document.formDiasTrabajo.fecha_fin.value);" />
+
+</label>
+	</form>
+	</div>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Registrar Prestamo a Socio</title>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>REGISTRO DE PRESTAMO</strong><hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="prestamo_si.php?accion=[accion]" onSubmit="return validaPrestamo();">
+                <input name="registrar_prestamo" id="registrar_prstamo" type="hidden" value="registrar_prestamo">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+				 <tr>
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha de Prestamo:</strong></div></td>
+                    <td width="64%" colspan="3"><input name="fecha_creacion" type="text" id="fecha_creacion" size="10" value="[fecha_creacion]"><button type="reset" id="boton">...</button>
+                    <script type="text/javascript">
+                        Calendar.setup({
+                            inputField     :    "fecha_creacion",      // id del campo de texto
+                            ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+                            showsTime      :    false,            // true para q se muestre la hora en el calendario
+                            button         :    "boton",   // id del boton
+                            singleClick    :    true,           // double-click mode
+                            step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+                        });
+                    </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Licencia o CI (Socio):</strong></div></td>
+                    <td width="66%" colspan="3">[licencia]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+				<tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Licencia o CI (Chofer):</strong></div></td>
+                    <td width="66%" colspan="3">[licencia2]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre del Chofer:</strong></div></td>
+                    <td colspan="3"><div id="nombreChofer">[nombreChofer]</div></td>
+                </tr>
+                <tr>
+                    <td><div align="right"><strong>Tipo de Prestamo:</strong></div></td>
+                    <td><select name="tipo_prestamo" id="tipo_prestamo">
+                        [tipoprestamo]
+                    </select></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto Prestamo:</strong></div></td>
+                    <td colspan="3"><input name="monto_prestamo" type="text" id="monto_prestamo" onKeyPress="return numeral(event)" size="5" value="[montoPrestamo]"></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Descripci&oacute;n:</strong></div></td>
+                    <td colspan="3"><input name="descripcion_prestamo" type="text" id="descripcion_prestamo" onKeyPress="return numeral_literal(event)" value="[descripcionPrestamo]"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><div align="center">
+                        <input type="submit" name="Submit3" value="[boton]">
+                        <input type="button" value="CANCELAR" onClick="window.location.href='prestamo_si.php'">
+                    </div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

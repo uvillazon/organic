@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Mostrar Familia del afiliado</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+<script language="JavaScript" src="js/imprimir.js"></script>
+</head>
+<body class="sub_body">
+<?php
+		include("librerias/my_lib.php");
+		conectarDB();			
+		$sql1="select * from movil where idmovil='".$_GET['codmovil']."';";		
+		$serv=consultaDB($sql1);
+		$row=mysql_fetch_array($serv);		
+		?>
+<table width="38%" border="0" align="center">
+  <tr>
+    <td height="765" class="outline"><table width="346" border="0" align="center" >
+        <tr>
+          <td width="282">&nbsp;</td>
+          <td width="54"> No 
+            <?php 
+
+$sql="select h.numero_hoja from hoja_de_control h,compra c, movil m 
+where c.id_control=h.id_control and m.idmovil=c.idmovil and
+m.idmovil='".$_GET['codmovil']."'";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 		echo "No $r[0]";
+	
+?>
+          </td>
+        </tr>
+      </table>
+      
+      <table width="102%" height="186"  border="0" align="center">
+        <tr> 
+            
+          <td width="19%"><font size="3">Propietario:</font></td>
+            
+          <td width="81%"><?php echo $row[3];?>Movil<b class="titulo"> <?php echo $row[2];?></b>Linea<b class="titulo"><?php echo $row[4];?></b></td>
+          </tr>
+		  <tr> 
+            <td width="39%"><font size="4">Placa: 
+              <?=$row[5];?>
+              </font></td>
+            <td width="61%"> Fecha </td>
+          </tr>
+          <tr> 
+            
+          <td>Conductor:</td>
+            
+          <td> 
+            <?php 
+
+$sql="select chofer.nombre_chofer
+from chofer,movil
+where (chofer.idchofer=movil.idchofer)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "<input name='nom_chofer' type='text' value='$r[0]' checked>";
+?>
+          </td>
+          </tr>
+		<tr> 
+          <td width="19%">&nbsp;</td>
+          <td width="81%" valign="middle" align="right"><p>No 
+              <?php 
+
+$sql="select h.numero_hoja from hoja_de_control h,compra c, movil m 
+where c.id_control=h.id_control and m.idmovil=c.idmovil and
+m.idmovil='".$_GET['codmovil']."'";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 		echo "No $r[0]";
+	
+?>
+            </p>
+            <p>
+              <?php 
+
+$sql="select h.fecha_venta_hoja from hoja_de_control h,compra ,movil m 
+where compra.id_control=h.id_control and
+compra.idmovil='".$_GET['codmovil']."'";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+echo "Fecha  $r[0]";
+	
+?>
+            </p>
+            <p>&nbsp;</p>
+            </td>
+        </tr>
+        <tr> 
+          
+        </tr>
+      </table>
+
+      <form name="#" method="post" action="ParaInsertar.php">
+	    <table width="99%" height="33" border="0" align="center">
+          <tr> 
+            <td width="17%">Propietario:</td>
+            <td width="83%"> <?php echo $row[3];?>.........................................Movil<b class="titulo"><?php echo $row[2];?></b></td>
+          </tr>
+        </table>
+		 <table width="99%" border="0" align="center">
+
+          <tr> 
+            <td width="39%" height="23"><font size="4">Placa: 
+              <?=$row[5];?>
+              </font></td>
+            <td width="61%"> Fecha </td>
+          </tr>
+          
+          
+        </table>
+		 <table width="100%" height="26" border="0" align="center">
+          <tr> 
+            <td width="14%">Ingreso:</td>
+            <td width="86%">&nbsp; </td>
+          </tr>
+        </table>
+       
+		
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+	
+       
+	
+           <table width="100%" height="83" border="0" align="center">
+          <tr> 
+            <td width="33%" height="30">Nombre Conductor:</td>
+            <td width="67%"> 
+              <?php 
+
+$sql="select chofer.nombre_chofer
+from chofer,movil
+where (chofer.idchofer=movil.idchofer)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "<input name='nom_chofer' type='text' value='$r[0]' checked>";
+?>
+            </td>
+          </tr>
+          <tr> 
+            <td height="23">Numero Licencia:</td>
+            <td> 
+              <?php 
+
+$sql="select chofer.num_licencia
+from chofer,movil
+where (chofer.idchofer=movil.idchofer)and(movil.idmovil='".$_GET['codmovil']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo "<input name='num_licencia' type='text' value='$r[0]' checked>";
+?>
+            </td>
+          </tr>
+		  <tr> 
+            <td height="22">Observaciones:</td>
+            <td>Aporte sindicato:7 Bs. Ahorro 8 Bs</td>
+          </tr>
+        </table>
+       
+      </form> </td>
+  </tr>
+</table>
+<div align="center">
+  <input type=button value="Imprimir" name="Print11" onClick="printit()">
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Registrar Multa</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>REGISTRO DE MULTAS AL MOVIL POR FALTA AL TRABAJO </strong>
+            <hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="mframe" id="mframe" method="post" action="registrar.php">
+                                    <input name="registrar_permiso" id="registrar_permiso" type="hidden" value="registrar_permiso">
+									<table width="100%" border="0">
+									 <td height="26" colspan="4"><div align="center"></div></td>
+		  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+          de MOVIL:</strong></div></td>
+                                        <td width="66%" colspan="3"><input name="licencia" type="text" id="licencia" onKeyPress="return numeral(event)" size="8"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                                        <td colspan="3">&nbsp;</td>
+									  </tr>
+                                                             
+									   			<tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Concepto: Cancelacion por :</strong></div></td>
+                                        <td colspan="3"><select name="permiso" id="select">
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+										   <option value="7">7</option>
+                                        </select>
+                                        Dias no trabajados'''''''''''''' C/U 7 Bs por dia </td>
+                                      </tr>						   
+                                           <tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto  a Pagar:</strong></div></td>
+                                        <td colspan="3"><input name="ingreso_falta" type="text" id="ingreso_falta" size="7">
+                                        Bolivianos</td>
+                                      </tr>                                 
+                                                                            <tr> 
+                                        <td colspan="4"> <div align="center"> 
+                                          <input type="button" name="Submit3" value="R E G I S T R A R" onClick="enviar(mframe);">
+</div></td>
+                                      </tr>
+                                    </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

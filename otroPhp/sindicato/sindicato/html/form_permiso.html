@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Registrar Permiso Especial</title>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>[titulo]</strong><hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="dias_no_trabajados.php?accion=[accion]" onSubmit="return validaMovil();">
+                <input name="registrar_permiso" id="registrar_permiso" type="hidden" value="registrar_permiso">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+                <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Licencia o CI:</strong></div></td>
+                    <td width="66%" colspan="3">[licencia]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+                <tr>
+                    <td><div align="right"><strong>Linea :</strong></div></td>
+                    <td>[lineas]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero Movil:</strong></div></td>
+                    <td colspan="3">[numeroMovil]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Razon de Permiso :</strong></div></td>
+                    <td colspan="3"><input name="razon" type="text" id="razon" onKeyPress="return numeral_literal(event)" value="[numeroPlaca]"></td>
+                </tr>
+                <tr> 
+                    <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Dias de Permiso Libres Otorgados :</strong></div></td>
+                    <td colspan="3"><input name="dias" type="text" id="dias" onKeyPress="return numeral_literal(event)" value="[numeroPlaca2]"></td>
+                </tr>                                      
+                <tr>
+                    <td colspan="4"><div align="center">
+                        <input type="submit" name="Submit3" value="[boton]">
+                        <input type="button" value="CANCELAR" onClick="window.location.href='dias_no_trabajados.php'">
+                    </div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

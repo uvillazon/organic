@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Mostrar hoja de Control</title>
+<script language="JavaScript" src="js/imprimir.js"></script>
+</head>
+<body class="sub_body">
+<table width="47%" border="0" align="center">
+  <tr>
+    <td height="682" class="outline"><table width="445" height="25" border="0" align="center" >
+        <tr>
+          <td width="308" height="21">&nbsp;</td>
+          <td width="127"> [numHoja] </td>
+        </tr>
+      </table>
+      
+      <table width="94%" height="226"  border="0" align="center">
+        <tr>  
+            <td width="17%" height="113"><font color="#FFFFFF" size="3">&nbsp;</font></td>
+            
+          <td width="83%"> <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><font color="#FFFFFF">&nbsp;</font>[nombreSocio]<font color="#FFFFFF">..</font> 
+              [numMovil] [linea] </p></td>
+        </tr>
+		<tr>    
+            
+          <td width="17%" height="21"><font color="#FFFFFF" size="4"></td>
+            
+          <td width="83%"> <font color="#FFFFFF">&nbsp;</font>[placa]<font color="#FFFFFF">Fecha Compra</font>[fechaCompra]</td>
+        </tr>
+        <tr>    
+            <td height="21"><font color="#FFFFFF">Conductor:</font></td>
+            <td>[nombreConductor]</td>
+        </tr>
+		<tr>
+            <td width="17%">&nbsp;</td>
+            <td width="83%" valign="middle" align="center"><p><font color="#FFFFFF">............................................</font>[numHoja]</p>
+            <p><font color="#FFFFFF">........................................</font>[fechaCompra]</p>
+            </td>
+        </tr>
+        <tr></tr>
+      </table>
+	  
+	  
+      <form name="#" method="post" action="ParaInsertar.php">
+	    <table width="102%" height="33" border="0" align="center">
+            <tr> 
+                <td width="20%"><font color="#FFFFFF">&nbsp;</font></td>
+                
+            <td width="80%"> <font color="#FFFFFF">&nbsp;</font>[nombreSocio] 
+              <font color="#FFFFFF">Movil:.........</font>[numMovil] [linea] </td>
+            </tr>
+        </table>
+        <table width="99%" border="0" align="center">
+            <tr> 
+                
+            <td width="39%" height="22"><font color="#FFFFFF" size="4">.................</font>[placa]</td>
+                
+            <td width="61%"><font color="#FFFFFF">Fecha a usar:......</font>[fechaUso]</td>
+            </tr>
+        </table>
+        <table width="100%" height="26" border="0" align="center">
+            
+			
+        </table>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+       	
+        <table width="100%" height="75" border="0" align="center">
+            <tr>
+                
+            <td width="27%" height="22">&nbsp;</td>
+                <td width="73%">[nombreConductor]</td>
+            </tr>
+            <tr>
+                <td height="21"><font color="#FFFFFF">&nbsp;</font></td>
+                <td>[licenciaConductor]</td>
+            </tr>
+            <tr> 
+                <td height="24"><font color="#FFFFFF">&nbsp;</font></td>
+                <td>[detalleImporte]</td>
+            </tr>
+        </table>
+      </form> </td>
+    </tr>
+</table>
+<div align="center">
+  <input type=button value="Imprimir" name="Print11" onClick="printit()">
+</div>
+</body>
+</html>

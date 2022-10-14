@@ -1,0 +1,85 @@
+<div class="Title">Lista de Ingresos</div>
+<html>
+    <head>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>Resumen Diario de Ingresos y Egresos Linea 131</strong><hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="arqueo.php?accion=[accion]">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+              
+               
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo de Fecha Anterior Bs:</strong></div></td>
+                    <td colspan="3"><div id="saldoAnteriorB">[saldoAntB]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo de Fecha Anterior SUS:</strong></div></td>
+                     <td colspan="3"><div id="saldoAnteriorS">[saldoAntS]</div></td>
+                </tr>
+			
+                <tr>
+                    <td colspan="4"><div align="center">
+                     
+                    <div class="Content_" align="center" style="color:#000000">
+                                            [contenido]
+                      </div>
+					
+                    </div></td>
+				</tr>
+				  <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Total Disponible Bs:</strong></div></td>
+                    <td colspan="3"><div id="saldoTotalB">[totalDispB]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Total Disponible SUS:</strong></div></td>
+                     <td colspan="3"><div id="saldoTotalS">[totalDispS]</div></td>
+                </tr>
+				
+				<tr>
+                    <td colspan="4"><div align="center">
+					                        <div class="Content_" align="center" style="color:#000000">
+                                            [contenido2]
+                      </div>
+                    </div></td>
+				</tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo Del Dia Bs:</strong></div></td>
+                    <td colspan="3"><div id="saldoDisponibleB">[saldoDiaB]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo Del Dia  SUS:</strong></div></td>
+                     <td colspan="3"><div id="saldoDisponibleS">[saldoDiaS]</div></td>
+                </tr>
+				
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo Disponible Bs:</strong></div></td>
+                    <td colspan="3"><div id="saldoDisponibleB">[saldoDispB]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Saldo Disponible SUS:</strong></div></td>
+                     <td colspan="3"><div id="saldoDisponibleS">[saldoDispS]</div></td>
+                </tr>
+				
+				<tr>
+                    <td colspan="4"><div align="center">
+                       <p>[Add]
+						  <input type="button" value="Detalle Dia" onClick="window.location.href='arqueo.php'">
+                    </p>
+                    
+                    </div></td>
+				</tr>
+		   </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

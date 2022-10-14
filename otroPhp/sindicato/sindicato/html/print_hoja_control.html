@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Mostrar hoja de Control</title>
+<link href="css/print_hoja.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="js/imprimir.js"></script>
+<SCRIPT language="javascript"> 
+function imprimir()
+{ if ((navigator.appName == "Netscape")) { window.print() ; 
+} 
+else
+{ var WebBrowser = '<OBJECT ID="WebBrowser1" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>'; 
+document.body.insertAdjacentHTML('beforeEnd', WebBrowser); WebBrowser1.ExecWB(6, -1); WebBrowser1.outerHTML = "";
+}
+}
+</SCRIPT>
+<link href="print_hoja.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<body>-->
+	<div id="hoja">
+		<div id="titulo"><span class="numero_hoja">N°[numHoja]-G-V</span><br />
+			<span>[fechaCompra]#[numero]</span>
+	<!--	<span>[fechaCompra]#[numero]*[fechaIniciomes]</span>-->
+		
+	</div>
+		<div id="info_principal">
+			<span class="nombre_socio">[nombreSocio]</span><br />
+			<div id="movil"><span class="col31">[numMovil]</span></div>
+			<span class="col32">[linea]</span>
+			<span class="col33">[placa]</span><br />
+			<span class="col21"></span>
+			<span class="col22"></span>
+		</div>
+		<div id="espacio_sello">
+			
+		</div>
+		<div id="info_extra">
+			<span class="nombre_conductor">[nombreConductor]</span><br />
+			<span class="licencia">[licenciaConductor]</span><br /><!--
+			<span class="observacion">Total aporte [totalPago] Bs.</span>-->
+			
+			<span class="observacion">[detalleImporte]</span>
+		</div>
+	</div>
+</body>
+<script language="javascript">
+imprimir();
+window.close();
+</script>
+</html>

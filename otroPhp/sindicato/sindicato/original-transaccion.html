@@ -1,0 +1,136 @@
+<?php
+class tipotransaccion
+{
+	var $parameter=array();
+	function SetParameter($name,$value)
+	{
+		$this->parameter[$name]=$value;
+	}
+	function mostrarRegistro(){
+		$template=new template;
+		$template->SetTemplate('html/registro.html');
+		return $template->Display();
+	}
+	function registrarTipoTransaccion(){
+		$template = new template;
+		$template->SetTemplate('html/form_tipotransaccion.html');
+		$template->SetParameter('transaccion','');
+        $template->SetParameter('monto_transaccion','');
+        $template->SetParameter('accion','saveTipoTransaccion');
+        $template->SetParameter('boton','REGISTRAR');
+		return $template->Display();
+	}
+    function modificarTipoTransaccion(){
+        $query = new query;
+        $tipotransaccion = $query -> getRow("*","tipo_transaccion","where id_tipo_transaccion = ".$_GET[id]);
+		$template = new template;
+		$template->SetTemplate('html/form_tipotransaccion.html');
+		$template->SetParameter('transaccion',$tipotransaccion["transaccion"]);
+        $template->SetParameter('monto_transaccion',$tipotransaccion["monto_transaccion"]);
+        $template->SetParameter('accion','saveUpdateTipoTransaccion&id='.$_GET['id']);
+        $template->SetParameter('boton','MODIFICAR');
+		return $template->Display();
+	}
+    
+    function deleteTipoTransaccion(){
+        $query = new query;
+        if($query->dbDelete("tipo_transaccion","WHERE id_tipo_transaccion = ".$_GET['id']))
+            //echo "<script>alert('Tipo de transaccion elminado exitosamente')</script>";
+        echo "<script>window.location.href='tipotransaccion.php'</script>";
+	}
+    
+    function saveUpdateTipoTransaccion() //save the new Item
+    {
+        $query = new query;
+        $update['transaccion'] = $_POST['tipo_transaccion'];
+        $update['monto_transaccion'] = $_POST['monto_transaccion'];        
+		if($query->dbUpdate($update,"tipo_transaccion","where id_tipo_transaccion = ".$_GET['id'])){ //save in the data base
+			//echo "<script>alert('Tipo de transaccion modificado exitosamente');</script>";
+			echo "<script>window.location.href='tipotransaccion.php'</script>";
+		}
+		else{ //error
+			echo "<script>alert('Error en el registro');</script>";
+			echo "<script>window.location.href='tipotransaccion.php'</script>";
+		}
+    }
+    
+    function saveTipoTransaccion() //save the new Item
+    {
+        $query = new query;
+        $insert['transaccion'] = $_POST[tipo_transaccion];
+        $insert['monto_transaccion'] = $_POST[monto_transaccion];
+		if($query->dbInsert($insert,"tipo_transaccion")){ //save in the data base
+			//echo "<script>alert('Tipo de transaccion registrado exitosamente');</script>";
+			echo "<script>window.location.href='tipotransaccion.php'</script>";
+		}
+		else{ //error
+			echo "<script>alert('Error en el registro');</script>";
+			echo "<script>window.location.href='tipotransaccion.php'</script>";
+		}
+    }
+    
+    function listarTipoTransaccion() //list for default the all items
+	{
+		$template = new template;
+		$template->SetTemplate('html/lista_tipotransaccion.html'); //sets the template for this function
+		
+		//DataBase Conexion//
+		$query = new query;
+        $confirm="javascript:return confirm('Esta seguro de eliminar este tipo de transaccion?');";
+        $resulttransaccion = $query->getRows("*","tipo_transaccion");
+        $init = (($_GET['page'] == "" ? 1 : $_GET['page']) - 1) * 10;
+        $resulttransaccion1 = $query->getRows("*","tipo_transaccion","LIMIT $init , 10");
+        
+		$numtransaccion = count($resulttransaccion1);
+        if($numtransaccion > 0) {
+            $list ='<table border = "1"><thead><tr>
+                <th>Tipo transaccion</th>
+                <th>Monto</th>
+				<th>Linea 131</th>
+				<th>Linea 132</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+              </tr></thead>';
+            $x = 0;
+            foreach ($resulttransaccion1 as $key=>$value) {
+                $x++;
+                if(($x%2)==0)
+                    $par = "class='TdAlt'";
+                else $par = "";
+				
+				$list .= '<tbody><tr '.$par.'>
+                  <td>'.$value["transaccion"].'</td>
+				  <td>'.$value["monto_transaccion"].'</td>
+                 <td>'.$nombreCompleto.'</td>
+                   <td>'.$value["estado"].'</td>
+                  
+                  <td><a href="tipotransaccion.php?accion=modificar&id='.$value["id_tipo_transaccion"].'" title="Modificar Tipo Transaccion"><img src="images/edit.gif"></a></td>
+                  <td><a href="tipotransaccion.php?accion=delete&id='.$value["id_tipo_transaccion"].'" onClick="'.$confirm.'" title="Eliminar tipo transaccion"><img src="images/delete.gif"></a></td>
+                  </tr></tbody>';
+            }
+            $list.='</table>';
+            $list .= paging::navigation(count($resulttransaccion),"tipotransaccion.php",10);
+        } else $list = '<div>No existen Tipos de transacciones registrados</div>';
+        $buttonAdd = '<input type="button" value="Nuevo" onclick="window.location.href=\'tipotransaccion.php?accion=registro\'">';
+        $template->SetParameter('add',$buttonAdd);
+		$template->SetParameter('contenido',$list);
+		return $template->Display();
+	}
+    
+	function Display(){
+		$template = new template;
+		$template->SetTemplate('html/home.html');
+		$template->SetParameter('registro',$this->mostrarRegistro());
+        if($_GET['accion']==""){
+            $template->SetParameter('contenido',$this->listarTipoTransaccion());
+        }
+        if($_GET['accion']=="registro"){
+            $template->SetParameter('contenido',$this->registrarTipoTransaccion());
+        }
+        if($_GET['accion']=="modificar"){
+            $template->SetParameter('contenido',$this->modificarTipoTransaccion());
+        }
+        
+		return $template->Display();
+	}
+}

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Registrar Tipo Prestamo</title>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>REGISTRO DE TIPO PRESTAMO</strong><hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="tipoprestamo.php?accion=[accion]" onSubmit="return validaTipoPrestamo();">
+                <input name="registrar_tipoprestamo" id="registrar_tipoprestamo" type="hidden" value="registrar_tipoprestamo">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+                <tr> 
+					<td width="29%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Tipo Prestamo:</strong></div></td>
+					<td colspan="3"><input name="tipo_prestamo" type="text" id="tipo_prestamo" value="[tipoprestamo]" onKeyPress="return literal(event)" size="50"></td>
+			  </tr>
+			   <tr> 
+					<td width="29%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Interes:</strong></div></td>
+					<td colspan="3"><input name="interes" type="text" id="interes" value="[interes]" onKeyPress="return numeral(event)" size="8">%</td>
+			  </tr>
+                <tr>
+                    <td colspan="4"><div align="center">
+                        <input type="submit" name="Submit3" value="[boton]">
+                        <input type="button" value="CANCELAR" onClick="window.location.href='tipoprestamo.php'">
+                    </div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

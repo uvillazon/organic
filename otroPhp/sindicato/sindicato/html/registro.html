@@ -1,0 +1,43 @@
+<div class="module">
+			<div>
+				<div>
+					<div>
+													<h3>R E G I S T R O</h3>
+											<form action="" method="GET" name="LoginForm" onSubmit="return logInUser();">
+		<fieldset class="input">
+	[error]
+	<p id="form-login-username">
+	
+		<label for="modlgn_username">Nombre de usuario</label><br>
+		<input name="Login" class="inputbox" alt="Login" size="18" type="text">
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn_passwd">Password</label><br>
+		<input name="Password" class="inputbox" size="18" alt="password" type="password">
+	</p>
+	
+		<input name="Submit" class="button" value="Iniciar sesion" type="submit">
+	</fieldset>
+	<ul>
+		<li>
+			<a href="#">
+			Olvido su Password?</a>
+		</li>
+	
+			</ul>
+	
+</form>
+					</div>
+					<script type="text/javascript">
+	function logInUser()
+	{
+		if (document.forms.LoginForm.Login.value.length > 0 && document.forms.LoginForm.Password.value.length > 0)
+		{
+				window.location.href = 'verificarusuario.php?Login='+document.forms.LoginForm.Login.value+'&Password='+document.forms.LoginForm.Password.value;
+		}
+		return false;
+	}
+</script>
+				</div>
+			</div>
+		</div>

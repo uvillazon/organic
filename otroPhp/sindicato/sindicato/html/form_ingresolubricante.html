@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Ingresos</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<script type="text/javascript" language="javascript">
+/*Funcion que oculta campo*/
+    function Hide(id) {
+        if(document.getElementById(id).style["display"] != "none"){
+            document.getElementById(id).style["display"] = "none";
+        }
+    }
+    function Show(id) {
+        if(document.getElementById(id).style["display"] == "none"){
+            document.getElementById(id).style["display"] = "";
+        }
+    }
+</script>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>REGISTRO DE INGRESOS </strong>
+            <hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+            <form name="mframe" id="mframe" method="post" action="ingresolubricante.php?accion=[accion]"onSubmit="return validaIngreso();">
+			<table width="73%" border="0" align="center">
+                <tr bgcolor="#FFFFFF"> 
+                    <td height="26" colspan="4"><div align="center"></div></td>
+                </tr>
+				<tr>
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Fecha :</strong></div></td>
+                    <td width="64%" colspan="3"><input name="fecha_creacion" type="text" id="fecha_creacion" size="10" value="[fecha_creacion]"><button type="reset" id="boton">...</button>
+                    <script type="text/javascript">
+                        Calendar.setup({
+                            inputField     :    "fecha_creacion",      // id del campo de texto
+                            ifFormat       :    "%Y-%m-%d",       // formato en el q se presentara la fecha (se puede cambiar el orden tontejas)
+                            showsTime      :    false,            // true para q se muestre la hora en el calendario
+                            button         :    "boton",   // id del boton
+                            singleClick    :    true,           // double-click mode
+                            step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+                        });
+                    </script>
+                    </td>
+                </tr>
+                <tr> 
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Recibo:</strong></div></td>
+                    <td width="64%" colspan="3"><input name="numero_registro" type="text" id="numero_registro" size="10" readonly value="[numHoja]"></td>
+                </tr>
+				<tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero Movil:</strong></div></td>
+                    <td colspan="3">[numeroMovil]</td>
+                </tr>
+                
+                <!--tr>
+                    <td><div align="right"><strong>Linea:</strong></div></td>
+                    <td>[lineas]</td>
+                </tr-->
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Propietario:</strong></div></td>
+                    <td colspan="3"><div id="datosMovil">[nombreSocio]</div></td>
+                </tr>
+                                <tr> 
+                    <td height="25" bgcolor="#FFFFFF"><div align="right"><strong>Tipo Ingreso:</strong></div></td>
+                    <td colspan="3"><select name="nombre" id="nombre">
+                      	
+                        [tipoingreso]
+                    </select>
+                    </td>
+					</tr>
+					 
+		<tr id="showDias" style="display:none;">
+                    <td width="36%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de dias por permiso de trabajo:</strong></div></td>
+                    <td width="64%" colspan="3">[dias]</td>
+                </tr>
+					 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Valor agregado:</strong></div></td>
+                    <td colspan="3"><div id="nombrepago">[nombrepago]</div></td>
+                </tr>
+				<tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto Ingreso:</strong></div></td>
+                    <td colspan="3"><input name="monto_prestamo" type="text" id="monto_prestamo" onKeyPress="return numeral(event)" size="5" value="[montoPrestamo]"></td>
+                </tr>
+                <tr> 
+                    <td height="25" bgcolor="#FFFFFF"><div align="right"><strong>concepto Ingreso:</strong></div></td>
+                    <td colspan="3"><textarea name="descripcion_ingreso">[conceptoIngreso]</textarea></td>
+                </tr>
+                <tr> 
+                    <td colspan="4"> <div align="center"> 
+                    <input type="submit" name="Submit3" value="[boton]">
+                    <input type="button" value="CANCELAR" onClick="window.location.href='ingresolubricante.php'"></div></td>
+                </tr>
+            </table>
+        </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Menu de Reportes</title>
+<link rel="stylesheet" type="text/css" href="../estilo.css">
+<script language="JavaScript">
+ function borde(mid)
+ { obj=document.getElementById(mid);   
+  /*Ponemos mas borde*/
+   obj.border=6; 
+   /*Lo separamos*/
+   obj.cellPadding=4;
+ }
+ function nborde(mid)
+ { obj=document.getElementById(mid);   
+ /*Volvemos todoa su estado Natural*/
+   obj.border=0; 
+   obj.cellSpacing=0;
+ }
+</script>
+</head>
+
+<body class="mbody">
+<br>
+<table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="0%"><img alt="" src="../imagenes/gblnav_left.gif" height="32" width="8" /></td>
+    <td width="99%" background="../imagenes/glbnav_background.gif">
+	<b>REPORTES:</b></td>
+    <td width="0%"><img alt="" src="../imagenes/glbnav_right.gif" height="32" width="8" /></td>
+  </tr>
+</table>
+<div id="mcelda">
+  <img alt="" src="../imagenes/tl_curve_white.gif" height="6" width="6" id="tl" /> <img alt="" src="../imagenes/tr_curve_white.gif" height="6" width="6" id="tr" />  
+
+    <table width="100%"  border="0">
+      <tr>
+        <td width="85" height="75" align="left">
+		<a href="reportes_uno.php"  onMouseOver="borde('img1')" onMouseOut="nborde('img1')"><img src="../imagenes/llibre.gif" name="img1" width="71" height="58" border="0" class="mimagen" id="img1" ></a></td>
+        <td><font class="texto"><font size="2"><b>
+		REPORTE DE INGRESOS DIARIOS.
+		</b></font></font></td>
+      </tr>
+    </table>
+    <table width="100%"  border="0">
+      <tr>
+        <td width="85" height="75" align="left">
+		<a href="reportes_dos.php" onMouseOver="borde('img2')" onMouseOut="nborde('img2')"><img src="../imagenes/llibre.gif" name="img2" width="71" height="58" border="0" class="mimagen" id="img2"></a></td>
+        <td><font class="texto"><font size="2"><b>
+		REPORTE DE .
+		</b></font></font></td>
+      </tr>
+    </table>    
+	<table width="100%"  border="0">
+      <tr>
+        <td width="85" height="75" align="left">
+		<a href="reportes_tres.php" onMouseOver="borde('img4')" onMouseOut="nborde('img4')"><img src="../imagenes/llibre.gif" name="img4" width="71" height="58" border="0" class="mimagen" id="img4"></a></td>
+        <td><font class="texto"><font size="2"><b>
+		REPORTE .</b></font></font></td>
+      </tr>
+      <tr>
+        <td height="75" align="left"><a href="reportes_cuatro.php" onMouseOver="borde('img3')" onMouseOut="nborde('img3')">
+		<img src="../imagenes/llibre.gif" name="img3" width="71" height="58" border="0" class="mimagen" id="img3" ></a></td>
+        <td>
+          <font class="texto"><font size="2"><b>REPORTE DE .<br>
+          </b></font></font>
+        </td>
+      </tr>
+      <tr>
+        <td height="75" align="left"><a href="reportes_cinco.php"  onMouseOver="borde('img5')" onMouseOut="nborde('img5')"><img src="../imagenes/llibre.gif" name="img5" width="71" height="58" border="0" class="mimagen" id="img5" ></a></td>
+        <td><font class="texto"><font size="2"><b>REPORTE DE . </b></font></font></td>
+      </tr>
+      <tr>
+        <td height="85" align="left"><a href="reportes_cinco.php"  onMouseOver="borde('img6')" onMouseOut="nborde('img6')"><img src="../imagenes/llibre.gif" name="img6" width="71" height="58" border="0" class="mimagen" id="img6" ></a></td>
+        <td><font class="texto"><font size="2"><b>REPORTE DE . </b></font></font></td>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

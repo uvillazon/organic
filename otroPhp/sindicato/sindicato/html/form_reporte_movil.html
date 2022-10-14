@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Imprimir Informe</title>
+       <link href="estilo.css"type=text/css rel=stylesheet>
+		<style media="print" type="text/css">
+#imprimir {
+visibility:hidden
+}
+</style>
+    </head>
+	<script language="JavaScript" src="js/imprimir.js"></script>
+
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                
+               <form name="#" method="post" action="ParaInsertar.php">
+	   
+				<tr> 
+                    <td height="78" colspan="2" align="center"><p><strong>[titulo]</strong></p>
+                      <p>Del: [fechainicio] Al: [fechafin] </p>
+                      <hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+				<input name="registrar_permiso" id="registrar_permiso" type="hidden" value="registrar_permiso">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+               <tr>
+                    <td><div align="right"><strong>Linea :</strong></div></td>
+                    <td>[lineas]</td>
+                </tr>
+			   <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Movil:</strong></div></td>
+                    <td colspan="3">[numeroMovil]</td>
+                </tr>
+				
+			    <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Licencia o CI:</strong></div></td>
+                    <td width="66%" colspan="3">[licencia]</td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+                
+                
+				
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Hojas de Control compradas:</strong></div></td>
+                    <td colspan="3">[hojas] </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Faltas :</strong></div></td>
+                    <td colspan="3">[diasnotrabajados] dia(s) </td>
+                </tr>
+				 <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Mecanico/Otros:</strong></div></td>
+                    <td colspan="3">[diaspermisoLibre] dia(s) </td>
+                </tr>
+				
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Permiso trabajo  :</strong></div></td>
+                    <td colspan="3">[diaspermiso] Total pagado:[totalpermiso] </td>
+                </tr>
+                <tr> 
+                    <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Atraso asamblea :</strong></div></td>
+                    <td colspan="3">[diasatraso] Total pagado:[totalatraso] </td>
+                </tr>  
+				<tr> 
+                    <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Falta asamblea :</strong></div></td>
+                    <td colspan="3">[diasfalta] Total pagado:[totalfalta] </td>
+                </tr>   
+				<tr> 
+                    <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong> Permiso Asamblea:</strong></div></td>
+                    <td colspan="3">[permisoas] Total pagado:[totalasamblea] </td>
+                </tr>                                       
+                <tr>
+                    <td colspan="4"><div align="center">
+                     <label>
+<input type="button" name="imprimir" id="imprimir" value="Imprimir" onClick="window.print();" />
+</label>
+
+</div></td>
+                </tr>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

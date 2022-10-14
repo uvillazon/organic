@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Registrar Movil para Socio</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+<body class="sub_body">
+<table width="72%" border="0" align="center">
+  <tr>
+    <td height="347" class="outline"><table width="90%"  border="0" align="center">
+        
+        <tr> 
+          <td height="78" colspan="2" align="center"><strong>REGISTRO DE MOVIL PARA SOCIO YA REGISTRADO</strong><hr class="mraya" width="100%" size="5"></td>
+        </tr>
+		
+      </table>
+<form name="mframe" id="mframe" method="post" action="registrar.php">
+                                    <input name="registrar_socio" id="registrar_socio" type="hidden" value="registrar_socio">
+									<table width="100%" border="0">
+									 <td height="26" colspan="4"><div align="center"></div></td>
+		  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero 
+          de Licencia o CI:</strong></div></td>
+                                        <td width="66%" colspan="3"><input name="licencia" type="text" id="licencia" onKeyPress="return numeral(event)" size="8"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                                        <td colspan="3">&nbsp;</td>
+									  </tr>
+                                      <tr>
+        <td><div align="right"><strong>Linea en la que se registrara el nuevo Movil:</strong></div></td>
+        <td><select name="linea" id="select">
+          <option value="linea131">Linea 131</option>
+          <option value="linea132">Linea 132</option>
+          </select></td>
+      </tr>                           <tr> 
+            <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero Movil:</strong></div></td>
+                                        
+      <td colspan="3"><input name="movil" type="text" id="movil" onKeyPress="return numeral(event)" size="5"></td>
+                                      </tr>
+									  <tr> 
+                                        <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Numero de Placa del Vehiculo:</strong></div></td>
+                                        
+      <td colspan="3"><input name="placa" type="text" id="placa" onKeyPress="return numeral_literal(event)"></td>
+                                      </tr>
+									   			<tr> 
+                                        <td width="48%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto  por registro movil nuevo:</strong></div></td>
+                                        <td colspan="3"><input name="ingreso_movil_nuevo" type="text" id="ingreso_movil_nuevo" size="7">
+                                        Bolivianos</td>
+                                      </tr>						   
+                                                                           
+                                                                            <tr> 
+                                        <td colspan="4"> <div align="center"> 
+                                          <input type="button" name="Submit3" value="R E G I S T R A R" onClick="enviar(mframe);">
+</div></td>
+                                      </tr>
+                                    </table>
+      </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

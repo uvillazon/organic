@@ -1,0 +1,239 @@
+<html>
+<head>
+<title>Plan de Pagos</title>
+<link href="estilo.css"type=text/css rel=stylesheet>
+</head>
+
+<script language="JavaScript" src="../js/imprimir.js"></script>
+<?php
+		include("librerias/my_li.php");
+		conectarDB();			
+		$sql1="select * from socio where id_socio='".$_GET['codsocio']."';";		
+		$serv=consultaDB($sql1);
+		$row=mysql_fetch_array($serv);		
+		?>
+<TABLE width="90%" border=0 align="center" cellPadding=0 cellSpacing=0>
+  <TR>
+    <TD class=outline> 
+	<form name="#" method="post" action="ParaInsertar.php">
+	<table width="597" border="0" align="center" >
+        <tr>
+            
+          <td width="584" height="21" align="center"><strong>PRESTAMO Nro.</strong></td>
+         
+        </tr>
+      </table>
+	<table width="68%" height="83" border="0" align="center">
+          
+          <tr> 
+            
+          <td height="23">Nombre Completo: </td>
+            
+          <td> <font size="4"><strong> 
+            <?php 
+
+$sql="select nombre_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            </strong></font> <font size="4"><strong> 
+            <?php 
+
+$sql="select apellido1_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            </strong></font> <font size="4"><strong>
+            <?php 
+
+$sql="select apellido2_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            </strong></font> </td>
+          </tr>
+		  <tr> 
+            
+          <td height="22">Fecha Prestamo</td>
+            <td><?php 
+
+$sql="select prestamo.fecha_prestamo
+from prestamo_socio, socio
+where (prestamo.id_socio=socio.id_socio)and(socio.id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo " $r[0]";
+?></td>
+          </tr>
+		  <tr> 
+            
+          <td width="32%" height="30">Monto Prestamo:</td>
+            
+          <td width="68%">
+            <?php 
+
+$sql="select prestamo.monto_prestamo
+from prestamo_socio, socio
+where (prestamo.id_socio=socio.id_socio)and(socio.id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo " $r[0]";
+?>
+          </td>
+          </tr>
+		  <tr> 
+            
+          <td height="22">Descripcion Prestamo:</td>
+            
+          <td>
+            <?php 
+
+$sql="select prestamo.descripcion_prestamo
+from prestamo_socio, socio
+where (prestamo.id_socio=socio.id_socio)and(socio.id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo " $r[0]";
+?>
+          </td>
+          </tr>
+		  <tr> 
+            
+          <td height="22">Interes Prestamo:</td>
+            
+          <td>
+            <?php 
+
+$sql="select tipo_prestamo.interes
+from prestamo_socio, socio, tipo_prestamo
+where (prestamo.id_socio=socio.id_socio)and(prestamo.id_tipo_prestamo=tipo_interes.id_tipo_prestamo)and(socio.id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+ 
+		echo " $r[0]";
+?>
+          </td>
+          </tr>
+        </table>
+     
+        <div align="center"> 
+         
+            <input name=".cont." id=".cont." type="hidden" value="'$reporte[0]'">
+            <font size="4"><strong>PLAN DE PAGO Sr: 
+            <?php 
+
+$sql="select nombre_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            <?php 
+
+$sql="select apellido1_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            <?php 
+
+$sql="select apellido2_socio
+from socio
+where id_socio='".$_GET['codsocio']."');";
+//    echo $sql;
+  $res = consultaDB($sql);			
+  $r=mysql_fetch_array($res);
+   echo " $r[0]";
+?>
+            </strong></font></p>
+          </div>
+        <table width="560" border="1" align="center" cellpadding="0" cellspacing="1" bgcolor="#003399">
+          <tr bgcolor="#999999" valign="top"> 
+            <td width="73"><font color="#000000"><b>Nro Cuota</b></font></td>
+            <td width="93" valign="top"><p><font color="#000000"><b>Fecha Pago</b></font></p></td>
+            <td width="164" valign="top"><font color="#000000"><b>Monto Pago</b></font></td>
+            <td width="115" valign="top"><font color="#000000"><b>Saldo</b></font></td>
+            <td width="109" valign="top"><font color="#000000"><b>Interes</b></font></td>
+          </tr>
+          <?php
+include("../librerias/my_lib.php");
+conectarDB();
+$sql="SELECT FROM  WHERE t.cod_caso=n.cod_caso AND t.cod_educacion_ni=e.cod_educacion_ni AND e.grado LIKE '%".$_GET['gradon']."%'AND e.establecimiento_ed LIKE'%".$_GET['colegio']."%' AND e.nombre_curso LIKE'%".$_GET['curso']."%'" ;
+$d="and n.cod_caso=t.cod_caso ORDER BY (".$_GET['ordenar'].");";
+
+
+if($_GET['autorizado']=="ok")
+$sql=$sql.$a;
+elseif($_GET['autorizado']=="nook")
+$sql=$sql.$b;
+if(isset($_GET['rango']))
+$sql=$sql.$c;
+
+$sql=$sql.$d;
+
+//echo $sql;
+  $resultado = consultaDB($sql);
+$xtabtamano=consultaDB($sql);
+$cantidadtotal=mysql_result($xtabtamano,0,0);
+//$mostrarsolo=$_GET["numcp"];
+$iniciarde=$_GET["ini"];		 
+//$totalpaginasx=getpaginas($cantidadtotal,$mostrarsolo);
+$numerarcpx=$iniciarde;
+
+$cont=0;
+        while( $r=mysql_fetch_array($resultado) ) {
+		
+?>
+          <tr bgcolor="#FFFFFF" valign="top"> 
+            <td><font color="#FFFFFF"><b><?php echo ($numerarcpx+1);?></b></font></td>
+            <td><div align="center"> <font color="#FFFFFF"> 
+                <?=$r[0]?>
+                </font></div></td>
+            <td><div align="left"> <font color="#FFFFFF"> 
+                <?=$r[2]?>
+                </font></div></td>
+            <td><div align="left"> <font color="#FFFFFF"> 
+                <?=$r[3]?>
+                </font></div></td>
+            <td><div align="left"> <font color="#FFFFFF"> 
+                <?=$r[5]?>
+                </font></div></td>
+          </tr>
+          <?php
+$numerarcpx=$numerarcpx+1;}
+?>
+        </table>
+			 
+            </form></TD></TR></TABLE>
+  <div align="center"> 
+                <input type=button value="Imprimir" name="Print11" onClick="printit()">
+              </div>
+			 
+                 
+
+</body>
+</html>

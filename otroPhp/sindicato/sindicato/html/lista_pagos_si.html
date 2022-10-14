@@ -1,0 +1,68 @@
+<div class="Title">Lista de pagos</div>
+<html>
+    <head>
+        <link href="estilo.css"type=text/css rel=stylesheet>
+    </head>
+    <body class="sub_body">
+    <table width="72%" border="0" align="center">
+        <tr>
+            <td height="347" class="outline"><table width="90%"  border="0" align="center">
+                <tr> 
+                    <td height="78" colspan="2" align="center"><strong>LISTA DE PAGOS A REALIZAR</strong><hr class="mraya" width="100%" size="5"></td>
+                </tr>
+                </table>
+                <form name="mframe" id="mframe" method="post" action="prestamo_si.php?accion=[accion]">
+                <table width="100%" border="0">
+                <td height="26" colspan="4"><div align="center"></div></td>
+                <tr>
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Prestamo #:</strong></div></td>
+                    <td width="66%" colspan="3">[id_prestamo]<input type="hidden" name="id_prestamo" value="[id_prestamo]"></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre de Socio:</strong></div></td>
+                    <td colspan="3"><div id="nombreSocio">[nombreSocio]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Nombre del Chofer:</strong></div></td>
+                    <td colspan="3"><div id="nombreChofer">[nombreChofer]</div></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Monto Prestamo:</strong></div></td>
+                    <td colspan="3">[montoPrestamo] Bs.<!--input name="monto_prestamo" type="text" id="monto_prestamo" onKeyPress="return numeral(event)" size="5" value="[montoPrestamo]"--></td>
+                </tr>
+				<tr>
+                    <td><div align="right"><strong>Interes:</strong></div></td>
+                    <td>[interes]%</td>
+                </tr>
+				<tr>
+                    <td><div align="right"><strong>Monto a pagar:</strong></div></td>
+                    <td>[total] Bs.<input type="hidden" name="total" value="[total]"></td>
+                </tr>
+				<tr>
+                    <td><div align="right"><strong>N&uacute;mero semanas:</strong></div></td>
+                    <td><select name="numero_semana" id="numero_semana">
+						[weeks]
+					</select></td>
+                </tr>
+                <tr> 
+                    <td width="34%" height="26" bgcolor="#FFFFFF"><div align="right"><strong>Descripci&oacute;n:</strong></div></td>
+                    <td colspan="3"><input name="descripcion_prestamo" type="text" id="descripcion_prestamo" onKeyPress="return numeral_literal(event)" value="[descripcionPrestamo]"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><div align="center">
+                        <p>[Add]
+						  <input type="submit" name="Submit3" value="CALCULAR Y GUARDAR">
+                          <input type="button" value="LISTA PRESTAMOS" onClick="window.location.href='prestamo_si.php'">
+                    </p>
+                    <div class="Content_" align="center" style="color:#000000">
+                                            [contenido]
+                      </div>
+                    </div></td>
+					</tr>
+				  </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    </body>
+</html>

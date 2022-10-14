@@ -1,0 +1,72 @@
+<sectio n class="contact-one">
+    <img src="assets/images/shapes/contact-bg-1-1.png" alt="" class="contact-one__shape-1">
+    <img src="assets/images/shapes/contact-bg-1-2.png" alt="" class="contact-one__shape-2">
+    <div class="container">
+        <div class="block-title text-center">
+            <div class="block-title__decor"></div><!-- /.block-title__decor -->
+            <p>Facturas Electronicas </p>
+            
+        </div><!-- /.block-title -->
+    <h3><span class="text-red">Facturas Electronicas </span></h3>
+
+    <div id="wrapper">
+
+        <!-- Form row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    <h4 class="header-title">Selector de <code class="highlighter-rouge">Facturas Electrónicas</code></h4>
+                    <br>
+
+                    <form action="?accion=consultar" method="POST">
+                        <code class="highlighter-rouge">El Carnet de Identidad ingresado #NoDebe contener el lugar de emision</code>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="example-number">NIT - CI - CEX</label>
+                                <input id="nit_ci" name="nit_ci" type="text" class="form-control" required="" placeholder="Numero de Documento Fiscal">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="example-number"><font size="-1">Extension CI</font></label>
+                                <input id="extnc_nit_ci" name="extnc_nit_ci" type="text" class="form-control" placeholder="1E">
+                            </div>
+                            <!--div class="form-group col-md-6">
+                                <label for="example-number">NIT - CI</label>
+                                <input data-parsley-type="number" id="nit_ci" name="nit_ci" type="text" class="form-control" required placeholder="Numero de Documento Fiscal"/>
+                            </div-->
+                            <div class="form-group col-md-6">
+                                <label for="example-number">Nro. FACTURA</label>
+                                <input data-parsley-type="number" id="num_fact" name="num_fact" type="text" class="form-control" required="" placeholder="Factura Numero....">
+                            </div>
+                        </div>
+
+                        <code class="highlighter-rouge">Periodo de Fechas en que su Factura fue Emitida</code>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="example-date">Fecha Inicial</label>
+                                <input class="form-control" type="date" name="date_fact_ini" id="date_fact_ini" required="">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="example-date">Fecha Final</label>
+                                <input class="form-control" type="date" name="date_fact_fin" id="date_fact_fin" required="">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Buscar&nbsp;&nbsp;<i class="fe-search"></i></button>
+                    </form>
+                </div>
+            <p class="sub-header" align="center">
+                Todos los datos son Requeridos 
+                <br>Esta informacion esta disponible en su documento impreso entregado
+                <br>Tambien puede ver esta informacion en la bandeja de entrada de la cuenta de correo electronico registrada en su institucion de pago
+            </p>
+            </div>
+        </div>
+        <!-- end row -->
+
+        
+    </div>
+                <!-- <iframe src="https://excnx.comteco.com.bo/factura_electronica/" style="width: 100%; height: 500px; visibility: visible;" onload="this.style.visibility = 'visible';" frameborder="0">NoCompatible Browser!</iframe> -->
+        
+    </div>        
+ </section>
