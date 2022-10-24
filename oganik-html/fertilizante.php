@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quienes Somos || Techic SA</title>
+    <title>fertilizante || Techic SA </title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
@@ -35,17 +35,18 @@
 </head>
 
 <body>
-    <div class="preloader">
+<div class="preloader">
         <img class="preloader__image" width="55" src="assets/images/loader.png" alt="" />
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
         <header class="main-header">
+
             <div class="topbar">
                 <div class="container">
                     <div class="main-logo">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo_techic.jpg" width="105" alt="">
+                        <a href="index.php" class="logo">
+                            <img src="assets/images/logo_techic.jpg" width="225" alt="">
                         </a>
                         <div class="mobile-nav__buttons">
                             <!-- <a href="#" class="search-toggler"><i class="organik-icon-magnifying-glass"></i></a>
@@ -79,9 +80,10 @@
 
                 </div><!-- /.container -->
             </div><!-- /.topbar -->
+            
             <nav class="main-menu">
                 <div class="container">
-                <div class="main-menu__login">
+                    <div class="main-menu__login">
                         <!-- <a href="#"><i class="organik-icon-user"></i>Login / Register</a> -->
                     </div><!-- /.main-menu__login -->
                     <ul class="main-menu__list">
@@ -89,22 +91,16 @@
                             <a href="index.php">Inicio</a>
                         </li>
                         <li>
-                        <a href="quienessomos.php">Quienes Somos</a>
+                            <a href="quienessomos.php">Quienes Somos</a>
                         </li>
                         <li class="dropdown">
-                             <a href="#">Productos</a>
+                            <a href="#">Productos</a>
                             <ul>
-                                <li><a href="products.html">Fertilizantes</a></li>
-                                <li><a href="products.html">Fungicidas</a></li>
-                                <li><a href="products.html">Herbicidas</a></li>
-                                <li><a href="products.html">Insecticidas</a></li>
-                                <li><a href="products.html">Semillas</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="news.html">News</a>
-                            <ul>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="news-details.html">News Details</a></li>
+                                <li><a href="fertilizante.php">Fertilizantes</a></li>
+                                <li><a href="fungicidas.php">Fungicidas</a></li>
+                                <li><a href="herbecidas.php">Herbicidas</a></li>
+                                <li><a href="insecticidas.php">Insecticidas</a></li>
+                                <li><a href="semillas.php">Semillas</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="news.html">Cultivos</a>
@@ -133,185 +129,88 @@
             <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
             <!-- /.page-header__bg -->
             <div class="container">
-                <h2>Quienes Somos</h2>
+                <h2>Fertilizantes</h2>
                 <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.php">Productos</a></li>
                     <li>/</li>
-                    <li><span>Quienes Somos</span></li>
+                    <li><span>Fertilizantes</span></li>
                 </ul><!-- /.thm-breadcrumb list-unstyled -->
             </div><!-- /.container -->
         </section><!-- /.page-header -->
 
-        <section class="about-one">
-            <img src="assets/images/shapes/about-leaf-1-1.png" alt="" class="about-one__shape-1">
+
+        <section class="product_detail">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-lg-6">
-                        <img src="assets/images/resources/about-1-1.png" class="img-fluid" alt="">
-                    </div><!-- /.col-md-12 -->
-                    <div class="col-md-12 col-lg-6">
-                        <div class="about-one__content">
-                            <div class="block-title text-left">
-                                <div class="block-title__decor"></div><!-- /.block-title__decor -->
-                                <p>Nosotros</p>
-                                <h3>TECNOLOGIA QUIMICA Y COMERCIO </h3>
-                            </div><!-- /.block-title -->
-                            <p>es una empresa dedicada a la venta y distribución de productos para la Agricultura.</p>
-                            <p>Contamos con más de 30 años de experiencia al servicio del agricultor, ofreciendo un
-                                 amplio catálogo de los mejores productos para la Agricultura, servicios de asesoramiento en tecnicas agropecuarias.</p>
-                            <p>Disponemos de un equipo técnico calificado para el control y seguimiento de las plagas en los distintos cultivos; 
-                                asesorando a los agricultores en la toma de decisiones para obtener el maximo rendimiento de sus cultivos.</p>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="product_detail_image">
+                            <img src="assets/images/products/product-d-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="product_detail_content">
+                            <h2>ABONOFOL 11-8-6</h2>
+                            <div class="product_detail_review_box">
+                                <div class="product_detail_price_box">
+                                    <p>XXXX Bs</p>
+                                </div>
+                                <div class="product_detail_review">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#" class="deactive"><i class="fa fa-star"></i></a>
+                                    
+                                </div>
+                            </div>
+                            <div class="product_detail_text">
+                                <p>Activador de los procesos iniciales del crecimiento y desarrollo en todos los cultivos; asímismo, su formulación NPK con microelementos quelatizados y fitohormonas es ideal para recuperar plantas estresadas por factores medioambientales adversos que limitan su funcionamiento normal. En frutales, aplicar antes y después de la floración hasta la maduración de los frutos.</p>
+                            </div>
+                            <ul class="list-unstyled product_detail_address">
+                                <li>Dosis: 1 L/200 L de agua</li>
+                                <li>Disponible</li>
+                            </ul>
                             
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="about-one__box">
-                                        <h3><i class="fa fa-check-circle"></i> Productos de Calidad</h3>
-                                        <p>solicite nuestro catalogo</p>
-                                    </div><!-- /.about-one__box -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="about-one__box">
-                                        <h3><i class="fa fa-check-circle"></i> Servicios integrales</h3>
-                                        <p>A su alcance para todos</p>
-                                    </div><!-- /.about-one__box -->
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                        </div><!-- /.about-one__content -->
-                    </div><!-- /.col-md-12 col-lg-6 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.about-one -->
-       
-        <section class="video-one jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% 50%">
-            <img src="assets/images/backgrounds/video-bg-1-1.jpg" alt="" class="jarallax-img">
-            <div class="container text-center">
-                <a href="https://www.youtube.com/watch?v=u5l4cdUjau4" class="video-popup">
-                    <i class="fa fa-play"></i>
-                </a><!-- /.video-popup -->
-                <h3><span>Mira</span> Nuestro video <br>
-                    De los mejores resultados</h3>
-            </div><!-- /.container -->
-        </section><!-- /.video-one -->
+                        </div>
+                    </div>
+                    <div>  <br> </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="product_detail_image">
+                            <img src="assets/images/products/product-d-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="product_detail_content">
+                            <h2>ABONOFOL 20-20-20</h2>
+                            <div class="product_detail_review_box">
+                                <div class="product_detail_price_box">
+                                    <p>XXXX Bs</p>
+                                </div>
+                                <div class="product_detail_review">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#" class="deactive"><i class="fa fa-star"></i></a>
+                                    
+                                </div>
+                            </div>
+                            <div class="product_detail_text">
+                                <p>Activador de los procesos iniciales del crecimiento y desarrollo en todos los cultivos; asímismo, su formulación NPK con microelementos quelatizados y fitohormonas es ideal para recuperar plantas estresadas por factores medioambientales adversos que limitan su funcionamiento normal. En frutales, aplicar antes y después de la floración hasta la maduración de los frutos.</p>
+                            </div>
+                            <ul class="list-unstyled product_detail_address">
+                                <li>Dosis: 1 L/200 L de agua</li>
+                                <li>Disponible</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
 
-        <section class="team-one">
-            <img src="assets/images/shapes/team-shape-1.png" alt="" class="team-one__shape-1">
-            <img src="assets/images/shapes/team-shape-2.png" alt="" class="team-one__shape-2">
-            <div class="container">
-                <div class="block-title text-center">
-                    <div class="block-title__decor"></div><!-- /.block-title__decor -->
-                    <p>Personal Profesional</p>
-                    <h3>Nuestro team</h3>
-                </div><!-- /.block-title -->
-                <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-1.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 1</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-2.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 2</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-3.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 3</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.team-one -->
-
-        <section class="team-two">
-            <img src="assets/images/shapes/team-shape-1.png" alt="" class="team-one__shape-1">
-            <img src="assets/images/shapes/team-shape-2.png" alt="" class="team-one__shape-2">
-            <div class="container">
-                <div class="block-title text-center">
-                    <div class="block-title__decor"></div><!-- /.block-title__decor -->
-                    <p>Personal de Ventas y Técnicos</p>
-                  
-                </div><!-- /.block-title -->
-                <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-1.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 1</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-2.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 2</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="team-card">
-                            <div class="team-card__image">
-                                <img src="assets/images/team/team-1-3.png" alt="">
-                            </div><!-- /.team-card__image -->
-                            <div class="team-card__content">
-                                <h3>Ingeniero 3</h3>
-                                <div class="team-card__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div><!-- /.team-card__social -->
-                            </div><!-- /.team-card__content -->
-                        </div><!-- /.team-card -->
-                    </div><!-- /.col-md-6 col-lg-3 -->
-                    
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.team-two-->
+        
 
         <footer class="site-footer background-black-2">
             <img src="assets/images/shapes/footer-bg-1-1.png" alt="" class="site-footer__shape-1">
@@ -393,7 +292,7 @@
                     </div><!-- /.inner-container -->
                 </div><!-- /.container -->
             </div><!-- /.bottom-footer -->
-        </footer><!-- /.site-footer -->
+        </footer><!-- /.site-footer -->    
 
     </div><!-- /.page-wrapper -->
 
@@ -405,7 +304,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="organik-icon-close"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="155" alt="" /></a>
+                <a href="index.html" aria-label="logo image"><img src="assets/images/logo_techic.jpg" width="155" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -418,24 +317,23 @@
                 </li>
                 <li>
                     <i class="organik-icon-calling"></i>
-                    <a href="tel:666-888-0000">77766655</a>
+                    <a href="tel:666-888-0000">666 888 0000</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
-            
-           <!-- <div class="mobile-nav__top">
+            <div class="mobile-nav__top">
                 <div class="mobile-nav__language">
                     <img src="assets/images/resources/flag-1-1.jpg" alt="">
                     <label class="sr-only" for="language-select">select language</label>
-                    <!- /#language-select.sr-only -->
-                    <!--<select class="selectpicker" id="language-select">
+                    <!-- /#language-select.sr-only -->
+                    <select class="selectpicker" id="language-select">
                         <option value="english">English</option>
                         <option value="arabic">Arabic</option>
                     </select>
-                </div><!- /.mobile-nav__language -->
-                <!--<div class="main-menu__login">
+                </div><!-- /.mobile-nav__language -->
+                <div class="main-menu__login">
                     <a href="#"><i class="organik-icon-user"></i>Login / Register</a>
-                </div><!- /.main-menu__login -->
-            <!--</div><!- /.mobile-nav__top -->
+                </div><!-- /.main-menu__login -->
+            </div><!-- /.mobile-nav__top -->
 
 
 
