@@ -1,16 +1,15 @@
 <?php
-class facturacion
+class index
 {
 	var $parameter = array();
 	function SetParameter($name, $value)
 	{
 		$this->parameter[$name] = $value;
 	}
-	function mostrarCabeceraMenu()
+	function mostrarPiePagina()
 	{
 		$template = new template;
-		$template->SetTemplate('html/cabecera_menu.html');
-		$template->SetParameter('menu', "Factura Electronica");
+		$template->SetTemplate('html/pie_pagina.html');
 		return $template->Display();
 	}
 	function mostrarCabeceraPrincipal()
@@ -20,14 +19,6 @@ class facturacion
 		// $template->SetParameter('menu', "Factura Electronica");
 		return $template->Display();
 	}
-	function mostrarPiePagina()
-	{
-		$template = new template;
-		$template->SetTemplate('html/pie_pagina.html');
-		// $template->SetParameter('menu', "Factura Electronica");
-		return $template->Display();
-	}
-	
 	function mostrarContenido()
 	{
 		$template = new template;
@@ -47,19 +38,11 @@ class facturacion
 	function Display()
 	{
 		$template = new template;
-		$template->SetTemplate('html/template.html');
-		$template->SetParameter('cabecera_menu', $this->mostrarCabeceraMenu());
+		$template->SetTemplate('html/template_index.html');
+		
 		$template->SetParameter('cabecera_principal', $this->mostrarCabeceraPrincipal());
 		$template->SetParameter('pie_pagina', $this->mostrarPiePagina());
-
-		$accion  = isset($_GET['accion']) ? null : 'aa';
-		if (isset($_GET['accion'])) {
-			if ($_GET['accion'] == "consultar") {
-				$template->SetParameter('contenido', $this->mostrarFacturas());
-			}
-		} else {
-			$template->SetParameter('contenido', $this->mostrarContenido());
-		}
+		// $template->SetParameter('contenido', $this->mostrarContenido());
 		return $template->Display();
 	}
 }
