@@ -2716,6 +2716,7 @@ h6 {
 .main-slider {
   overflow: hidden;
   position: relative;
+  height: 800px;
 }
 
 .main-slider .swiper-slide {

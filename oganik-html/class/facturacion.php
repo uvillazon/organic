@@ -27,7 +27,7 @@ class facturacion
 		// $template->SetParameter('menu', "Factura Electronica");
 		return $template->Display();
 	}
-	
+
 	function mostrarContenido()
 	{
 		$template = new template;
@@ -36,11 +36,44 @@ class facturacion
 		$template->SetTemplate('html/factura.html');
 		return $template->Display();
 	}
+	function mostrarDetalle($row){
+		$template = new template;
+		$template->SetTemplate('html/detalle.html');
+		$template->SetParameter('nro_factura', $row["nro_factura"]);
+		$template->SetParameter('importe', $row["importe"]);
+		$template->SetParameter('fecha', $row["fecha"]);
+		$template->SetParameter('url_factura', $row["url_factura"]);
+		$template->SetParameter('url_xml', $row["url_xml"]);
+		$template->SetParameter('razon_social', $row["razon_social"]);
+		return $template->Display();
+	}
+	function mostrarDetalleSinDato(){
+		$template = new template;
+		$template->SetTemplate('html/detalle_sd.html');
+		return $template->Display();
+	}
 	function mostrarFacturas()
 	{
 		$template = new template;
+		$query = new query;
+		// $where = "where nit=".$_POST["nit_ci"]. " AND nro_factura = ".$_POST["num_fact"]." AND BETWEEN ".$_POST["date_fact_ini"]." AND  ".$_POST["date_fact_fin"].";
+		// $where = sprintf("WHERE nit = %d AND nro_factura = %d AND fecha BETWEEN '%s' AND '%s'", $_POST["nit_ci"], $_POST["num_fact"] , $_POST["date_fact_ini"] , $_POST["date_fact_fin"]);
+		$where = sprintf("WHERE id = 1");
+
+		// var_dump($where);
+		$row = $query->getRow("*", "facturas", $where);
+		// var_dump($row);
+		// var_dump($_POST);
+		
+		// die();
 		// $template->SetTemplate('html/form_facturacion.html');
 		$template->SetTemplate('html/detalle_facturas.html');
+		if(is_null($row)){
+			$template->SetParameter('detalle',$this->mostrarDetalleSinDato());
+		}
+		else{
+			$template->SetParameter('detalle',$this->mostrarDetalle($row));
+		}
 		// $template->SetTemplate('html/factura.html');
 		return $template->Display();
 	}

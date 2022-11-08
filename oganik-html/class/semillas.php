@@ -9,7 +9,7 @@ class semillas
 	function mostrarCabeceraMenu()
 	{
 		$template = new template;
-		$template->SetTemplate('html/cabecera_menu.html');
+		$template->SetTemplate('html/cabecera_menu_producto.html');
 		$template->SetParameter('menu', "Semillas");
 		return $template->Display();
 	}
