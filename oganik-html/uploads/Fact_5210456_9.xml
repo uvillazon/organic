@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>9</numeroFactura>
+<cuf>45EDF4C16D551099B5229A781E5C74B3896A923BA1371DCD3B8AE6D74</cuf>
+<cufd>BQUFBQ1ZVQ0JBNkTlENkU4NEVFMTc=Q8KhTWZnVGJLV1VQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-26T19:34:05.069</fechaEmision>
+<nombreRazonSocial>FELIX ORELLANA ZURITA</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
+<numeroDocumento>5210456</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>1179</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>2520.02</montoTotal>
+<montoTotalSujetoIva>2520.02</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>2520.02</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los productos que consumes.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INHOS9C</codigoProducto>
+<descripcion>HORMIGUIN X 350 GR</descripcion>
+<cantidad>3.00</cantidad>
+<unidadMedida>17</unidadMedida>
+<precioUnitario>14.55</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>43.65</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>SESEM01</codigoProducto>
+<descripcion>SEMILLA BROCOLI LOGAN X 5000</descripcion>
+<cantidad>5.00</cantidad>
+<unidadMedida>111</unidadMedida>
+<precioUnitario>469.80</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>2349.00</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABFLI03</codigoProducto>
+<descripcion>FERTIL CAB X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>38.77</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>38.77</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INPAL40A</codigoProducto>
+<descripcion>PALADIN X 250 ML</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>34</unidadMedida>
+<precioUnitario>29.65</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>59.30</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>AFABM50</codigoProducto>
+<descripcion>ABONOFOL 30-10 X KG</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>22</unidadMedida>
+<precioUnitario>29.30</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>29.30</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

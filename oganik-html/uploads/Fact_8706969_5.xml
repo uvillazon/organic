@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>5</numeroFactura>
+<cuf>45EDF4C16D551069783DE6661FBD6E929F278C2125909EEDE05AE6D74</cuf>
+<cufd>BQUFDVlVDQkE=NkTlENkU4NEVFMTc=Qz5jU3hWYUtXVUFQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-25T21:50:24.938</fechaEmision>
+<nombreRazonSocial>ADMINDA VALLEJOS RODRIGUEZ</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
+<numeroDocumento>8706969</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>1757</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>118.81</montoTotal>
+<montoTotalSujetoIva>118.81</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>118.81</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: En caso de incumplimiento a lo ofertado o convenido, el proveedor debe reparar o sustituir el producto..</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>AFABL60A</codigoProducto>
+<descripcion>ABONOFOL 11-8-6 X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>28.33</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>28.33</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>HEBAL60A</codigoProducto>
+<descripcion>BAZUKA X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>90.48</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>90.48</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

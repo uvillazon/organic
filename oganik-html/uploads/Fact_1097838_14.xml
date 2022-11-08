@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>14</numeroFactura>
+<cuf>45EDF4C16D55109B3EE07B05138D69024B9299DCC4371DCD3B8AE6D74</cuf>
+<cufd>BQUFBQ1ZVQ0JBNkTlENkU4NEVFMTc=Q8KhTWZnVGJLV1VQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-26T22:46:00.501</fechaEmision>
+<nombreRazonSocial>RAMON TUJIÑO MOSTACEDO</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
+<numeroDocumento>1097838</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>1109</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>1014.55</montoTotal>
+<montoTotalSujetoIva>1014.55</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>1014.55</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: El proveedor deberá entregar el producto en las modalidades y términos ofertados o convenidos.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABMLI02</codigoProducto>
+<descripcion>MASTER DOWN X LT</descripcion>
+<cantidad>3.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>70.02</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>210.06</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABTLI01</codigoProducto>
+<descripcion>TRIPLE "A" X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>53.24</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>53.24</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTRLI01</codigoProducto>
+<descripcion>RYZOGEN X LT</descripcion>
+<cantidad>4.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>98.62</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>394.48</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTBIL60A</codigoProducto>
+<descripcion>BIOL X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>53.04</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>53.04</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INCYL60A</codigoProducto>
+<descripcion>CYPERTRIN X LT</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>119.29</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>238.58</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTKLI03</codigoProducto>
+<descripcion>KALIFRUT X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>65.15</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>65.15</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

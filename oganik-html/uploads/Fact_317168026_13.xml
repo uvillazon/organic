@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>13</numeroFactura>
+<cuf>45EDF4C16D55109B3DA4D63A325F7079849B985625371DCD3B8AE6D74</cuf>
+<cufd>BQUFBQ1ZVQ0JBNkTlENkU4NEVFMTc=Q8KhTWZnVGJLV1VQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-26T22:45:02.814</fechaEmision>
+<nombreRazonSocial>EMPRESA AGROQUIMICA TECNO AGRO SRL</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>5</codigoTipoDocumentoIdentidad>
+<numeroDocumento>317168026</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>2524</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>580.07</montoTotal>
+<montoTotalSujetoIva>580.07</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>580.07</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: Está prohibido importar, distribuir o comercializar productos prohibidos o retirados en el país de origen por atentar a la integridad física y a la salud.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>AFABL60A</codigoProducto>
+<descripcion>ABONOFOL 11-8-6 X LT</descripcion>
+<cantidad>10.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>28.33</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>283.30</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABELI01</codigoProducto>
+<descripcion>ENERGEN X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>58.19</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>58.19</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INCYL60A</codigoProducto>
+<descripcion>CYPERTRIN X LT</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>119.29</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>238.58</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

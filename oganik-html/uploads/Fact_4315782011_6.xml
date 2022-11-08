@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>6</numeroFactura>
+<cuf>45EDF4C16D55106A5F7A2EA907C8B5613F518DA7C4909EEDE05AE6D74</cuf>
+<cufd>BQUFDVlVDQkE=NkTlENkU4NEVFMTc=Qz5jU3hWYUtXVUFQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-25T23:33:45.300</fechaEmision>
+<nombreRazonSocial>MABEL AGUILAR</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>5</codigoTipoDocumentoIdentidad>
+<numeroDocumento>4315782011</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>2438</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>853.29</montoTotal>
+<montoTotalSujetoIva>853.29</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>853.29</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>1</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los productos que consumes.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INCAL60A</codigoProducto>
+<descripcion>CAPORAL 540 EC X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>138.23</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>138.23</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTBIL60A</codigoProducto>
+<descripcion>BIOL X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>53.04</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>53.04</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INCYL9B</codigoProducto>
+<descripcion>CYPERTRIN X 120 ML</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>34</unidadMedida>
+<precioUnitario>22.62</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>22.62</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABELI01</codigoProducto>
+<descripcion>ENERGEN X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>58.19</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>58.19</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABFLI03</codigoProducto>
+<descripcion>FERTIL CAB X LT</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>38.77</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>77.54</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABFLI01</codigoProducto>
+<descripcion>FERTIL FOSIK X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>52.62</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>52.62</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>ABFLI02</codigoProducto>
+<descripcion>FERTIL POWER X LT</descripcion>
+<cantidad>3.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>38.77</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>116.31</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>FUFPO01</codigoProducto>
+<descripcion>FITOKLIN X 250 GR</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>17</unidadMedida>
+<precioUnitario>98.41</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>98.41</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>AFFOL60A</codigoProducto>
+<descripcion>FOSFOL 10-38-0 X LT</descripcion>
+<cantidad>3.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>42.11</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>126.33</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>34661</codigoProductoSin>
+<codigoProducto>INHOS9C</codigoProducto>
+<descripcion>HORMIGUIN X 350 GR</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>17</unidadMedida>
+<precioUnitario>55.00</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>110.00</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

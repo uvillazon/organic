@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>10</numeroFactura>
+<cuf>45EDF4C16D551099B56F5EA04F0E83009CF893C247371DCD3B8AE6D74</cuf>
+<cufd>BQUFBQ1ZVQ0JBNkTlENkU4NEVFMTc=Q8KhTWZnVGJLV1VQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-26T19:34:28.827</fechaEmision>
+<nombreRazonSocial>NOELIA ESCOBAR GALARZA</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
+<numeroDocumento>9479030</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>1959</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>168.44</montoTotal>
+<montoTotalSujetoIva>168.44</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>168.44</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los productos que consumes.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>FUAGM50</codigoProducto>
+<descripcion>AGROZEB 80 PM X KG</descripcion>
+<cantidad>2.00</cantidad>
+<unidadMedida>22</unidadMedida>
+<precioUnitario>57.70</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>115.40</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTBIL60A</codigoProducto>
+<descripcion>BIOL X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>53.04</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>53.04</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>

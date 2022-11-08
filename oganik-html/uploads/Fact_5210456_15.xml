@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<facturaComputarizadaCompraVenta xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cabecera>
+<nitEmisor>1022021020</nitEmisor>
+<razonSocialEmisor>TECNOLOGIA QUIMICA Y COMERCIO S.A.</razonSocialEmisor>
+<municipio>Cercado</municipio>
+<telefono>....</telefono>
+<numeroFactura>15</numeroFactura>
+<cuf>45EDF4C16D55109B3F4A62B10BD2563A389A9B6368371DCD3B8AE6D74</cuf>
+<cufd>BQUFBQ1ZVQ0JBNkTlENkU4NEVFMTc=Q8KhTWZnVGJLV1VQzMDNFNzEyQzIyN</cufd>
+<codigoSucursal>0000</codigoSucursal>
+<direccion>Casa Matríz: Calle Eduardo Laredo S/N, Condominio Escudaño Casa 1</direccion>
+<codigoPuntoVenta>0</codigoPuntoVenta>
+<fechaEmision>2022-10-26T22:46:33.277</fechaEmision>
+<nombreRazonSocial>FELIX ORELLANA ZURITA</nombreRazonSocial>
+<codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
+<numeroDocumento>5210456</numeroDocumento>
+<complemento></complemento>
+<codigoCliente>1179</codigoCliente>
+<codigoMetodoPago>1</codigoMetodoPago>
+<numeroTarjeta xsi:nil="true"></numeroTarjeta>
+<montoTotal>211.24</montoTotal>
+<montoTotalSujetoIva>211.24</montoTotalSujetoIva>
+<codigoMoneda>1</codigoMoneda>
+<tipoCambio>1.0000</tipoCambio>
+<montoTotalMoneda>211.24</montoTotalMoneda>
+<montoGiftCard>0.00</montoGiftCard>
+<descuentoAdicional>0.00</descuentoAdicional>
+<codigoExcepcion>0</codigoExcepcion>
+<cafc xsi:nil="true"/>
+<leyenda>Ley N° 453: Los alimentos declarados de primera necesidad deben ser suministrados de manera adecuada, oportuna, continua y a precio justo.</leyenda>
+<usuario>admin</usuario>
+<codigoDocumentoSector>1</codigoDocumentoSector>
+</cabecera>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>FUAGM50A</codigoProducto>
+<descripcion>FRUTIGEN X LT</descripcion>
+<cantidad>3.00</cantidad>
+<unidadMedida>17</unidadMedida>
+<precioUnitario>31.18</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>93.54</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTKLI03</codigoProducto>
+<descripcion>KALIFRUT X LT</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>28</unidadMedida>
+<precioUnitario>65.15</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>65.15</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+<detalle>
+<actividadEconomica>466900</actividadEconomica>
+<codigoProductoSin>61172</codigoProductoSin>
+<codigoProducto>OTRLI02</codigoProducto>
+<descripcion>RYZOGEN X 500 ML</descripcion>
+<cantidad>1.00</cantidad>
+<unidadMedida>34</unidadMedida>
+<precioUnitario>52.55</precioUnitario>
+<montoDescuento xsi:nil="true" />
+<subTotal>52.55</subTotal>
+<numeroSerie xsi:nil="true" />
+<numeroImei xsi:nil="true" />
+</detalle>
+</facturaComputarizadaCompraVenta>
