@@ -57,8 +57,8 @@ class facturacion
 		$template = new template;
 		$query = new query;
 		// $where = "where nit=".$_POST["nit_ci"]. " AND nro_factura = ".$_POST["num_fact"]." AND BETWEEN ".$_POST["date_fact_ini"]." AND  ".$_POST["date_fact_fin"].";
-		// $where = sprintf("WHERE nit = %d AND nro_factura = %d AND fecha BETWEEN '%s' AND '%s'", $_POST["nit_ci"], $_POST["num_fact"] , $_POST["date_fact_ini"] , $_POST["date_fact_fin"]);
-		$where = sprintf("WHERE id = 1");
+		$where = sprintf("WHERE nit = %d AND nro_factura = %d AND fecha BETWEEN '%s' AND '%s'", $_POST["nit_ci"], $_POST["num_fact"] , $_POST["date_fact_ini"] , $_POST["date_fact_fin"]);
+		// $where = sprintf("WHERE id = 1");
 
 		// var_dump($where);
 		$row = $query->getRow("*", "facturas", $where);
