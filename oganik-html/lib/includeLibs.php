@@ -11,7 +11,7 @@ switch($_SERVER['HTTP_HOST'])
 	default:
 		ini_set("session.cache_expire","180");
 		ini_set("session.gc_maxlifetime","3600");
-		$_cfg['host'] = '194.195.84.1';
+		$_cfg['host'] = 'localhost';
 		$_cfg['user'] = 'u726787443_organic';
 		$_cfg['pass'] = '5190630cI.c...';
 		$_cfg['db'] = 'u726787443_organic';
