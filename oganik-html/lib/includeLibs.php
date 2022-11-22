@@ -12,9 +12,9 @@ switch($_SERVER['HTTP_HOST'])
 		ini_set("session.cache_expire","180");
 		ini_set("session.gc_maxlifetime","3600");
 		$_cfg['host'] = 'localhost';
-		$_cfg['user'] = 'u726787443_organic';
-		$_cfg['pass'] = '5190630cI.c...';
-		$_cfg['db'] = 'u726787443_organic';
+		$_cfg['user'] = 'techicco_webuser';
+		$_cfg['pass'] = 'Control$2022';
+		$_cfg['db'] = 'techicco_facturasdb';
 		break;
 }
 define('cgf', $_cfg);   // RIGHT - Works OUTSIDE of a class definition.

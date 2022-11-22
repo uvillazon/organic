@@ -40,6 +40,7 @@ class productos
 	{
 		$template = new template;
 		$template->SetTemplate('html/template.html');
+		$template->SetParameter('pagina', "Productos");
 		$template->SetParameter('cabecera_menu', $this->mostrarCabeceraMenu());
 		$template->SetParameter('cabecera_principal', $this->mostrarCabeceraPrincipal());
 		$template->SetParameter('pie_pagina', $this->mostrarPiePagina());

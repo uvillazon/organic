@@ -7842,3 +7842,84 @@ h6 {
   text-align: center;
   
 }
+
+
+.flip-box-prod {
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  border: 0px solid #f1f1f1;
+  padding-bottom: 20px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-prod-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box-prod:hover .flip-box-prod-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-prod-front, .flip-box-prod-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-prod-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-prod-back {
+  background-color: #383A39;
+  color: white;
+  padding: 5px;
+  transform: rotateY(180deg);
+}
+
+.flip-box-prod .h2left  {
+  margin: 0;
+  color: #000000;
+  font-family: var(--special-font);
+  font-size: 50px;
+  line-height: 1.1;
+  margin-top: 15px;
+  text-align: left;
+  
+}
+
+.flip-boxp-prod .h2rigth  {
+  margin: 0;
+  color: #000;
+  font-family: var(--special-font);
+  font-size: 50px;
+  line-height: 1.1;
+  margin-top: 15px;
+  text-align: right;
+  
+}
+
+.flip-box-prod .h2center  {
+  margin: 0;
+  color: #fff;
+  font-family: var(--special-font);
+  font-size: 30px;
+  line-height: 1.1;
+  margin-top: 15px;
+  text-align: center;
+  
+}

@@ -40,6 +40,7 @@ class quienessomos
 	{
 		$template = new template;
 		$template->SetTemplate('html/template.html');
+		$template->SetParameter('pagina', "Quienes Somos");
 		$template->SetParameter('cabecera_menu', $this->mostrarCabeceraMenu());
 		$template->SetParameter('cabecera_principal', $this->mostrarCabeceraPrincipal());
 		$template->SetParameter('pie_pagina', $this->mostrarPiePagina());

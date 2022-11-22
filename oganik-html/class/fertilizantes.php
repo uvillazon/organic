@@ -29,7 +29,7 @@ class fertilizantes
 	function mostrarContenido()
 	{
 		$template = new template;
-		$template->SetTemplate('html/fertilizantes.html');
+		$template->SetTemplate('html/fertilizantes1.html');
 		return $template->Display();
 	}
 	
@@ -37,6 +37,7 @@ class fertilizantes
 	{
 		$template = new template;
 		$template->SetTemplate('html/template.html');
+		$template->SetParameter('pagina', "Fertilizantes");
 		$template->SetParameter('cabecera_menu', $this->mostrarCabeceraMenu());
 		$template->SetParameter('cabecera_principal', $this->mostrarCabeceraPrincipal());
 		$template->SetParameter('pie_pagina', $this->mostrarPiePagina());

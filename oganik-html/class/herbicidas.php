@@ -37,6 +37,7 @@ class herbicidas
 	{
 		$template = new template;
 		$template->SetTemplate('html/template.html');
+		$template->SetParameter('pagina', "Herbicidas");
 		$template->SetParameter('cabecera_menu', $this->mostrarCabeceraMenu());
 		$template->SetParameter('cabecera_principal', $this->mostrarCabeceraPrincipal());
 		$template->SetParameter('pie_pagina', $this->mostrarPiePagina());
